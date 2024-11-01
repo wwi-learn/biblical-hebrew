@@ -1,0 +1,20 @@
+[
+    {
+        "name": "toggleLayoutDebug",
+        "desc": "When working with complex layouts, it’s often useful to see a border around each component for debugging purposes. The toggleLayoutDebug action does exactly this!",
+        "exampleDesc": "",
+        "usage": {
+            "type": "toggleLayoutDebug",
+            "on": true
+        },
+        "propSpec": [
+            {
+                "key": "on",
+                "dataType": "boolean",
+                "mandatory": true,
+                "dft": "",
+                "desc": "When set, the on property specifies whether debug mode should be on or off. When not set, debug mode will just be toggled to the opposite state of what it is currently on."
+            }
+        ]
+    }
+]

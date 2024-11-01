@@ -1,0 +1,78 @@
+[
+    {
+        "name": "containerMovable",
+        "description": "Allowing components to be moved around by dragging them with the mouse",
+        "usage": {
+            "type": "containerSimple",
+            "prps": {
+                "singlePage": true,
+                "backgroundColor": "lightGrey"
+            },
+            "wgts": [
+                {
+                    "type": "containerMovable",
+                    "container": "root",
+                    "prps": {
+                        "zIndex": 9999,
+                        "position": "absolute",
+                        "left": "0px",
+                        "top": "0px",
+                        "width": "100vw",
+                        "height": "100vh",
+                        "overflow": "hidden"
+                    },
+                    "wgts": [
+                        {
+                            "type": "mover",
+                            "prps": {
+                                "position": "absolute",
+                                "left": "100px",
+                                "top": "100px"
+                            },
+                            "wgts": [
+                                {
+                                    "type": "label",
+                                    "prps": {
+                                        "cpt": "Drag me!",
+                                        "paddingSize": "smallPadding",
+                                        "backgroundColor": "white"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "propSpec": [
+            {
+                "name": "wgts",
+                "type": "array",
+                "desc": "The metadata of child widgets to be rendered",
+                "internal": true,
+                "dft": "() => []"
+            },
+            {
+                "name": "movedEntries",
+                "type": "array",
+                "desc": "An array containing moved wgt data. This can be listened to by flows and scripts.",
+                "spec": "[{ index, coordinates, mda }]",
+                "internal": true,
+                "dft": "() => []"
+            },
+            {
+                "name": "scpsOnMove",
+                "type": "array",
+                "desc": "An array of scripts to be run when a component is moved inside the containerMovable"
+            },
+            {
+                "name": "extraWgts",
+                "type": "mixed",
+                "desc": "A single metadata object, or array of metadata objects that should be added to the container's list of children",
+                "dft": "() => []",
+                "setAction": "TODO(FUNCTION)",
+                "deleteAction:": "TODO(FUNCTION)"
+            }
+        ]
+    }
+]

@@ -1,0 +1,54 @@
+[
+    {
+        "name": "codeEditor",
+        "description": "Component for displaying code",
+        "usage": {
+            "type": "codeEditor",
+            "prps": {
+                "language": "json",
+                "value": {
+                    "type": "label",
+                    "prps": {
+                        "cpt": "This is a label",
+                        "color": "#ffffff"
+                    }
+                },
+                "prettyPrint": true,
+                "lint": true
+            }
+        },
+        "propSpec": [
+            {
+                "name": "language",
+                "type": "string",
+                "desc": "Unused for now...",
+                "dft": "json"
+            },
+            {
+                "name": "value",
+                "type": "string",
+                "desc": "The value of the input",
+                "dft": ""
+            },
+            {
+                "name": "prettyPrint",
+                "type": "boolean",
+                "desc": "When set to true, code highlighting will be enabled",
+                "dft": false
+            },
+            {
+                "name": "lint",
+                "type": "boolean",
+                "desc": "When set to true, the code will be formatted",
+                "dft": false
+            },
+            {
+                "name": "styleEditor",
+                "type": "object",
+                "internal": true,
+                "desc": "Styles to be applied to the editor textarea. In the future, these will likely be editable but for now, they need to sync up exactly with values in the stylesheet",
+                "dft": "() => ({fontSize: 14,minHeight: '100%',fontFamily: 'monospace',lineHeight: 1.3})"
+            }
+        ]
+    }
+]

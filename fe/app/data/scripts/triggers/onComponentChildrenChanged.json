@@ -1,0 +1,20 @@
+[
+    {
+        "name": "onComponentChildrenChanged",
+        "desc": "Fires when a components child elements changes state",
+        "exampleDesc": "",
+        "usage": {
+            "event": "onComponentChildrenChanged",
+            "source": "childComponentId"
+        },
+        "propSpec": [
+            {
+                "key": "source",
+                "dataType": "string",
+                "mandatory": false,
+                "dft": "script owner id",
+                "desc": "The id of the component we want to listen for componentChildrenChanged events on"
+            }
+        ]
+    }
+]

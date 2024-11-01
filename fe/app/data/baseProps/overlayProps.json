@@ -1,0 +1,45 @@
+[
+    {
+        "overlayProps": [
+            {
+                "name": "popoverMda",
+                "type": "array",
+                "desc": "Additional metadata that should be rendered \"over\" the component. This can be anything from tooltips, to badges to ad-hoc metadata",
+                "deleteAction": "(oldValue = [], deletedValue) => { const { id } = deletedValue; if (id === undefined) return; oldValue.spliceWhere(o => o.id === id); return oldValue; }"
+            },
+            {
+                "name": "contextMenu",
+                "type": "object",
+                "desc": "Informs the system that right-clicking on the component should open a context menu. Refer to the ContextManuManager component properties for more info",
+                "spec": {
+                    "items": "array",
+                    "mda": "object"
+                }
+            },
+            {
+                "name": "tooltipBlueprint",
+                "type": "string",
+                "desc": "The path to the blueprint that should be used for tooltips",
+                "dft": "({ tooltip }) => { if (tooltip !== undefined) return 'system/tooltips/basic'; }"
+            },
+            {
+                "name": "tooltip",
+                "type": "string",
+                "desc": "The tooltip for the component that should be displayed when hovering over it"
+            },
+            {
+                "name": "tooltipPosition",
+                "type": "string",
+                "desc": "Defines where the tooltip should be displayed relative to the component",
+                "options": "[ \"auto\", \"auto-start\", \"auto-end\", \"top\", \"top-start\", \"top-end\", \"bottom\", \"bottom-start\", \"bottom-end\", \"right\", \"right-start\", \"right-end\", \"left\",\"left-start\", \"left-end\"]",
+                "dft": "({ tooltip }) => { if (tooltip !== undefined) return 'top'; }"
+            },
+            {
+                "name": "tooltipZIndex",
+                "type": "number",
+                "desc": "Specifies the z-index for the component's tooltip",
+                "dft": "({ tooltip }) => { if (tooltip !== undefined) return 1; }"
+            }
+        ]
+    }
+]

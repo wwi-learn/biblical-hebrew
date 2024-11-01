@@ -1,0 +1,20 @@
+[
+    {
+        "name": "onAllMounted",
+        "desc": "Fires when other specified unmounted components are mounted (is rendered for the first time)",
+        "exampleDesc": "",
+        "usage": {
+            "event": "onAllMounted",
+            "source": "parentContainer"
+        },
+        "propSpec": [
+            {
+                "key": "source",
+                "dataType": "string",
+                "mandatory": false,
+                "dft": "script owner id",
+                "desc": "The id's of the components we want to listen for allMounted events on"
+            }
+        ]
+    }
+]

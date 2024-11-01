@@ -1,0 +1,34 @@
+[
+    {
+        "name": "setMultiState",
+        "desc": "Every component in the platform has its aesthetics and functionality dictated by its own state. As a result, most scripts will want to manipulate state at some stage. This action is very simular to the setState action, but is more powerful in that it can set multiple states inside a given component, at the same time.",
+        "exampleDesc": "",
+        "usage": {
+            "type": "setMultiState",
+            "target": "myLabel",
+            "value": {
+                "cpt": "I'm new!",
+                "color": "primary",
+                "deleteKeys": [
+                    "bold"
+                ]
+            }
+        },
+        "propSpec": [
+            {
+                "key": "target",
+                "dataType": "string",
+                "mandatory": false,
+                "dft": "The script owner's id",
+                "desc": "The id of the component you want to affect"
+            },
+            {
+                "key": "value",
+                "dataType": "object",
+                "mandatory": true,
+                "dft": "The script owner's id",
+                "desc": "An object containing each state key and associated value that should be set"
+            }
+        ]
+    }
+]

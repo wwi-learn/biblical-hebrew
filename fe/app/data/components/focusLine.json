@@ -1,0 +1,56 @@
+[
+    {
+        "name": "focusLine",
+        "description": "not provided",
+        "usage": {
+            "type": "focusLine",
+            "prps": {
+                "active": true,
+                "height": "10px",
+                "backgroundColor": "red"
+            }
+        },
+        "propSpec": [
+            {
+                "name": "active",
+                "type": "boolean",
+                "desc": "When true, the focus line will become visible",
+                "classMap": true
+            },
+            {
+                "name": "height",
+                "type": "string",
+                "desc": "The height of the component.",
+                "cssAttr": true,
+                "cssAttrVal": "mapToSize",
+                "dft": "2px"
+            },
+            {
+                "name": "backgroundColor",
+                "type": "string",
+                "desc": "The background color of the focusLine",
+                "cssVar": true,
+                "cssVarVal": "mapToColor",
+                "dft": "primary"
+            },
+            {
+                "name": "animationDuration",
+                "type": "string",
+                "desc": "The duration of the focus active/inactive transition",
+                "spec": "Please refer to: https://www.w3schools.com/cssref/css3_pr_transition-duration.asp",
+                "cssVar": true,
+                "cssVarVal": true,
+                "dft": "0.35s"
+            },
+            {
+                "name": "animationTimingFunction",
+                "type": "string",
+                "desc": "The timing function of the focus active/inactive transition",
+                "spec": "Please refer to: https://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp",
+                "cssVar": true,
+                "cssVarVal": true,
+                "dft": "cubic-bezier(0.64, 0.09, 0.08, 1)"
+            }
+        ]
+    }
+]

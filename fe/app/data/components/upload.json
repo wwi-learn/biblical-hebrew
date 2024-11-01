@@ -1,0 +1,141 @@
+[
+    {
+        "name": "upload",
+        "description": "Input component for uploading files",
+        "usage": {
+            "scope": "uploadFile",
+            "type": "containerSimple",
+            "prps": {
+                "acceptPrps": {},
+                "scope": "uploadFile",
+                "type": "containerSimple",
+                "prps": {
+                    "crossAxisAlign": "center"
+                },
+                "wgts": [
+                    {
+                        "relId": "upload",
+                        "id": "upload",
+                        "type": "upload",
+                        "prps": {
+                            "dragging": true,
+                            "canSelectMultiple": true,
+                            "files": []
+                        }
+                    },
+                    {
+                        "type": "button",
+                        "prps": {
+                            "cpt": "upload File",
+                            "labelPrps": {
+                                "color": "white"
+                            },
+                            "fireScript": {
+                                "actions": [
+                                    {
+                                        "type": "setState",
+                                        "target": "upload",
+                                        "key": "tOpenFileSelector",
+                                        "value": true
+                                    }
+                                ]
+                            }
+                          
+                        }
+                    },
+                    {
+                        "relId": "label",
+                        "type": "label",
+                        "prps": {
+                            "cpt": "",
+                            "flows": [
+                                {
+                                    "from": "||uploadFile.upload||",
+                                    "fromKey": "files",
+                                    "fromSubKey": "0",
+                                    "toKey": "cpt",
+                                    "mapFunctionString": "v => v.name"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "wgts": [
+                {
+                    "relId": "upload",
+                    "id": "upload",
+                    "type": "upload",
+                    "prps": {
+                        "dragging": true,
+                        "canSelectMultiple": true,
+                        "files": []
+                    }
+                },
+                {
+                    "type": "button",
+                    "prps": {
+                        "cpt": "upload File",
+                        "labelPrps": {
+                            "color": "white"
+                        },
+                        "fireScript": {
+                            "actions": [
+                                {
+                                    "type": "setState",
+                                    "target": "upload",
+                                    "key": "tOpenFileSelector",
+                                    "value": true
+                                },
+                                {
+                                    "type": "setState",
+                                    "target": "||uploadFile.label||",
+                                    "key": "cpt",
+                                    "value": "{{state.upload.files.0.name}}"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "relId": "label",
+                    "type": "label",
+                    "prps": {
+                        "cpt": ""
+                    }
+                }
+            ]
+        },
+        "propSpec": [
+            {
+                "name": "files",
+                "type": "array",
+                "desc": "A list of files"
+            },
+            {
+                "name": "fileList",
+                "type": "array",
+                "desc": "An array containing the file names"
+            },
+            {
+                "name": "dragging",
+                "type": "boolean",
+                "desc": "When true, the user is dragging",
+                "classMap": "dragging",
+                "dft": false
+            },
+            {
+                "name": "tOpenFileSelector",
+                "type": "boolean",
+                "desc": "Used to open a file explorer input window",
+                "dft": false
+            },
+            {
+                "name": "canSelectMultiple",
+                "type": "boolean",
+                "desc": "Used to specify whether this component should be able to handle multiple files at once.",
+                "dft": false
+            }
+        ]
+    }
+]

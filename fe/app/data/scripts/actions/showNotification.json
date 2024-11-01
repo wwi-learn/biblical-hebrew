@@ -1,0 +1,49 @@
+[
+    {
+        "name": "showNotification",
+        "desc": "It’s always good practice to let users know when certain things have happened, be it a success message or a warning.",
+        "exampleDesc": "",
+        "usage": {
+            "type": "showNotification",
+            "target": "notifications",
+            "msg": "Successfully loaded user details"
+        },
+        "propSpec": [
+            {
+                "key": "target",
+                "dataType": "string",
+                "mandatory": false,
+                "dft": "NOTIFICATIONS",
+                "desc": "The id of the notifications component by which the notification should be rendered"
+            },
+            {
+                "key": "msgType",
+                "dataType": "string",
+                "mandatory": false,
+                "dft": "info",
+                "desc": "The type of notification to show. Options are success, info, warning and error"
+            },
+            {
+                "key": "autoClose",
+                "dataType": "boolean",
+                "mandatory": false,
+                "dft": "false",
+                "desc": "When set to true, the notification will be shown in the user’s operating system instead of inside the browser"
+            },
+            {
+                "key": "msg",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "false",
+                "desc": "The message that should be shown"
+            },
+            {
+                "key": "duration",
+                "dataType": "integer",
+                "mandatory": false,
+                "dft": "3000",
+                "desc": "When autoClose is true, this is how long (in milliseconds) it will take for the message to vanish"
+            }
+        ]
+    }
+]

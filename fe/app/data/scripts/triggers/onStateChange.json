@@ -1,0 +1,55 @@
+[
+    {
+        "name": "onStateChange",
+        "desc": "Fires when a source component has a state change",
+        "usage": {
+            "event": "onStateChange",
+            "source": "inputUsername",
+            "key": "value"
+        },
+        "propSpec": [
+            {
+                "key": "source",
+                "dataType": "string",
+                "mandatory": false,
+                "dft": "script owner id",
+                "desc": "The id of the component we want to listen to state changes from"
+            },
+            {
+                "key": "sourceList",
+                "dataType": "array of strings",
+                "mandatory": false,
+                "dft": "",
+                "desc": "An array of id's of components we want to listen to state changes from"
+            },
+            {
+                "key": "key",
+                "dataType": "string",
+                "mandatory": false,
+                "dft": "value",
+                "desc": "Key we want to listen to on the source component(s)"
+            },
+            {
+                "key": "keyList",
+                "dataType": "array of string",
+                "mandatory": false,
+                "dft": "",
+                "desc": "An array of keys we want to listen to on the source component(s)"
+            },
+            {
+                "key": "ignoreEmpty",
+                "dataType": "boolean",
+                "mandatory": false,
+                "dft": "true",
+                "desc": "When set to false the trigger will also fire when the source component has an empty string value"
+            },
+            {
+                "key": "snapshotKeys",
+                "dataType": "array of strings",
+                "mandatory": false,
+                "dft": "",
+                "desc": "When set, state values on the source component will be set variables. e.g. snapshotKeys: [ 'value', 'disabled' ] will cause snapshot-value and snapsho-disabled to be set with the corresponding values from the source component to be set."
+            }
+        ]
+    }
+]

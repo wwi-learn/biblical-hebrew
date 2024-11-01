@@ -1,0 +1,20 @@
+[
+    {
+        "name": "onUnmount",
+        "desc": "Fires when a source component unmounts (is removed from the dashboard)",
+        "exampleDesc": "",
+        "usage": {
+            "event": "onUnmount",
+            "source": "inputUsername"
+        },
+        "propSpec": [
+            {
+                "key": "source",
+                "dataType": "string",
+                "mandatory": false,
+                "dft": "script owner id",
+                "desc": "The id of the component we want to listen for mount events on"
+            }
+        ]
+    }
+]

@@ -1,0 +1,39 @@
+[
+    {
+        "name": "audioRecorder",
+        "description": "component that allows users to record audio sound.",
+        "usage": {
+            "type": "audioRecorder",
+            "prps": {
+                "isRecording": true
+            }
+        },
+        "propSpec": [
+            {
+                "name": "isRecording",
+                "type": "boolean",
+                "desc": "When true, the audio recorder is recording",
+                "dft": false,
+                "internal": true
+            },
+            {
+                "name": "value",
+                "type": "string",
+                "desc": "The source where to get the audio from",
+                "internal": true
+            },
+            {
+                "name": "stream",
+                "type": "mediaStream",
+                "desc": "A stream of the audio media content",
+                "internal": true
+            },
+            {
+                "name": "recorder",
+                "type": "mediaRecorder",
+                "desc": "A mediaStream recorder that provides functionality to record",
+                "internal": true
+            }
+        ]
+    }
+]

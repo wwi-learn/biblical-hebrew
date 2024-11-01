@@ -1,0 +1,34 @@
+[
+    {
+        "name": "getTheme",
+        "desc": "This action will save a specific theme in a variable for to use",
+        "exampleDesc": "",
+        "usage": [
+            {
+                "type": "getTheme",
+                "name": "colors",
+                "storeAsVariable": "theme"
+            },
+            {
+                "type": "setState",
+                "value": "{{variable.theme.((state.self.value))}}"
+            }
+        ],
+        "propSpec": [
+            {
+                "key": "name",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The name of the theme you are getting"
+            },
+            {
+                "key": "storeAsVariable",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": "Variable name where you are storing your theme"
+            }
+        ]
+    }
+]

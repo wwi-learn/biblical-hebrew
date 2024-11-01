@@ -1,0 +1,66 @@
+[
+    {
+        "name": "forLoop",
+        "desc": "This for loop action is used to repeat a certain action known number of times. Use case for this action is if you want a certain action to run more than once based on a certain state or a fixed amount of times. (Usually to iterate over an array or when the increment value is nonstandard)",
+        "exampleDesc": "In this example, the backgroundColor will be logged twice (based on the counter). The counter of this loop can also be based on a components state and will require an incrementer. ",
+        "usage": {
+            "id": "c1",
+            "type": "container",
+            "prps": {
+                "backgroundColor": "primary",
+                "scps": [
+                    {
+                        "triggers": [
+                            {
+                                "event": "onMount"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "id": "innerScpsId",
+                                "type": "forLoop",
+                                "count": 2,
+                                "actions": [
+                                    {
+                                        "type": "log",
+                                        "msg": "The background color is primary, told you!"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "propSpec": [
+            {
+                "key": "id",
+                "dataType": "string",
+                "mandatory": false,
+                "dft": "",
+                "desc": "Defines the id for the script. While this key is not mandatory, it would be impossible to access any state that would normally be used if the counter is based on some components state (when the increment value is nonstandard)"
+            },
+            {
+                "key": "count",
+                "dataType": "integer",
+                "mandatory": true,
+                "dft": "",
+                "desc": "How many times the action should be looped"
+            },
+            {
+                "key": "target",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": "Where the action should be set to inside the forLoop"
+            },
+            {
+                "key": "rowNumberVarName",
+                "dataType": "string",
+                "mandatory": false,
+                "dft": "rowNumber",
+                "desc": "The name of the variable in which the row number for each record will be placed when performing the comparison"
+            }
+        ]
+    }
+]

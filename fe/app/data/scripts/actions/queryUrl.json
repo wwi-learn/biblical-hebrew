@@ -1,0 +1,88 @@
+[
+    {
+        "name": "queryUrl",
+        "desc": "This action is used when you want to query a URL directly (usually used when its a URL that is external and not the same as the gateway URL in your config.json file)",
+        "exampleDesc": "",
+        "usage": {
+            "type": "queryUrl",
+            "url": "http://someUrl.com/someEndpoint",
+            "method": "POST",
+            "headers": {
+                "someHeader": "someValue"
+            },
+            "body": {
+                "dir": "DESC",
+                "hed_cde": "DtaObj",
+                "limit": 10,
+                "sort": "",
+                "start": 0,
+                "filter": "",
+                "linkFilter": "",
+                "token": "((yourScriptId.state.app.token))"
+            },
+            "extractResults": [
+                {
+                    "path": "response.DataCollection.0.Data.0.DevProcess.0.Data.Item",
+                    "variable": "data"
+                }
+            ],
+            "extractAny": [
+                {
+                    "path": "status",
+                    "variable": "statusCode"
+                }
+            ]
+        },
+        "propSpec": [
+            {
+                "key": "method",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "GET",
+                "desc": "This is the type of query: POST, GET, DELETE etc."
+            },
+            {
+                "key": "url",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The actual URL you are trying to query"
+            },
+            {
+                "key": "body",
+                "dataType": "object",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The set of parameters"
+            },
+            {
+                "key": "headers",
+                "dataType": "object",
+                "mandatory": false,
+                "dft": "{ \"Content-Type\": \"application/json\" }",
+                "desc": "The set of parameters"
+            },
+            {
+                "key": "extractResults",
+                "dataType": "array",
+                "mandatory": false,
+                "dft": "",
+                "desc": " An array of paths to specific elements in the response you’d like to extract when the request succeeded"
+            },
+            {
+                "key": "extractErrors",
+                "dataType": "array",
+                "mandatory": false,
+                "dft": "",
+                "desc": "An array of paths to specific elements in the response you’d like to extract when the request failed"
+            },
+            {
+                "key": "extractAny",
+                "dataType": "array",
+                "mandatory": false,
+                "dft": "",
+                "desc": "An array of paths to specific elements in the response you’d like to extract regardless of whether or not the request succeeded"
+            }
+        ]
+    }
+]

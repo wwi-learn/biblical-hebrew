@@ -1,0 +1,270 @@
+[
+    {
+        "name": "timePicker",
+        "description": "Not provided",
+        "usage": {
+            "type": "timePicker",
+            "prps": {}
+        },
+        "propSpec": [
+            {
+                "name": "value",
+                "type": "string",
+                "desc": "The time string",
+                "spec": "HH:MM",
+                "dft": "() => { const now = new Date(); const result = [(now.getHours() + '').padStart(2, '0'),':',(now.getMinutes() + '').padStart(2, '0') ].join(''); return result;}"
+            },
+            {
+                "name": "valueWithAmPm",
+                "type": "string",
+                "desc": "The time string with the AM/PM suffix",
+                "internal": true
+            },
+            {
+                "name": "hours",
+                "type": "integer",
+                "desc": "The hour portion of the time"
+            },
+            {
+                "name": "minutes",
+                "type": "integer",
+                "desc": "The minute portion of the time"
+            },
+            {
+                "name": "amPm",
+                "type": "string",
+                "desc": "Indicates whether the time is AM or PM",
+                "options": [
+                    "AM",
+                    "PM"
+                ],
+                "dft": "AM"
+            },
+            {
+                "name": "intervalHours",
+                "type": "integer",
+                "desc": "Defines the interval between hour options in the picker. Only used when hourOptions is not set",
+                "dft": 1
+            },
+            {
+                "name": "intervalMinutes",
+                "type": "integer",
+                "desc": "Defines the interval between minute options in the picker. Only used when minuteOptions is not set",
+                "dft": 1
+            },
+            {
+                "name": "twentyFourHours",
+                "type": "boolean",
+                "desc": "When true, the time will be displayed in a 24 hour format",
+                "dft": false
+            },
+            {
+                "name": "active",
+                "type": "boolean",
+                "desc": "When true, the time picker popup will be displayed",
+                "dft": false
+            },
+            {
+                "name": "showAmPm",
+                "type": "boolean",
+                "desc": "When true, AM/PM will be displayed after the time value",
+                "dft": false
+            },
+            {
+                "name": "isDragging",
+                "type": "boolean",
+                "desc": "Set to true internally while the user is busy dragging a picker",
+                "dft": false,
+                "internal": true
+            },
+            {
+                "name": "popoverZIndex",
+                "type": "integer",
+                "desc": "When time pickers are rendered inside containers with higher zIndices, this needs to be set to one (or more) higher than the containing container's zindex"
+            },
+            {
+                "name": "prpsHourSlider",
+                "type": "object",
+                "desc": "Properties sent to the keen-slider plugin to render the pickers",
+                "spec": "Please refer to: https: //keen-slider.io/api/#api",
+                "dft": "{ vertical: true,slides: origin: 'center',perView: 5},loop: true,rubberband: false}"
+            },
+            {
+                "name": "prpsMinuteSlider",
+                "type": "object",
+                "desc": "Properties sent to the keen-slider plugin to render the pickers",
+                "spec": "Please refer to: https: //keen-slider.io/api/#api",
+                "dft": "{vertical: true,slides: {origin: 'center',perView: 5},loop: true,rubberband: false}"
+            },
+            {
+                "name": "hourOptions",
+                "type": "array",
+                "desc": "The hour options that should be available in the hour picker",
+                "spec": [
+                    1,
+                    2,
+                    3
+                ],
+                "dft": "({ intervalHours, twentyFourHours }) => {const max = twentyFourHours ? 24 : 12;const entries = ~~(max / intervalHours);const hourOptions = '0'\t.repeat(entries).split('').map((n, i) => i * intervalHours); return hourOptions;}"
+            },
+            {
+                "name": "minuteOptions",
+                "type": "string",
+                "desc": "The minute options that should be available in the minute picker",
+                "spec": [
+                    1,
+                    2,
+                    3
+                ],
+                "dft": "({ intervalMinutes }) => {const entries = ~~(60 / intervalMinutes);const minuteOptions = '0'.repeat(entries).split('').map((n, i) => i * intervalMinutes);return minuteOptions;}"
+            },
+            {
+                "name": "prpsInput",
+                "type": "object",
+                "desc": "Override properties for the input that's rendered",
+                "dft": "() => {return {};}"
+            },
+            {
+                "name": "valueColor",
+                "type": "string",
+                "desc": "The color of the value",
+                "cssVar": true,
+                "cssVarVal": "mapToColor",
+                "dft": "textPrimary"
+            },
+            {
+                "name": "valueColorHover",
+                "type": "string",
+                "desc": "The color of the value when the user hovers over it",
+                "cssVar": true,
+                "cssVarVal": "mapToColor",
+                "dft": "iconPrimary"
+            },
+            {
+                "name": "valueColorActive",
+                "type": "string",
+                "desc": "The color of the value when the picker is active",
+                "cssVar": true,
+                "cssVarVal": "mapToColor",
+                "dft": "iconPrimary"
+            },
+            {
+                "name": "backgroundColorHover",
+                "type": "string",
+                "desc": "The background color of the value when the user hovers on it",
+                "spec": "A color theme key like \"primary\"",
+                "cssVar": true,
+                "cssVarVal": "v => `var(--colors-${v}-rgb)`",
+                "dft": "primary"
+            },
+            {
+                "name": "backgroundOpacityHover",
+                "type": "decimal",
+                "desc": "The opacity of the value's background color when the user hovers over it",
+                "cssVar": true,
+                "cssVarVal": true,
+                "dft": 0.35
+            },
+            {
+                "name": "backgroundColorActive",
+                "type": "string",
+                "desc": "The background color of the value when the picker is active",
+                "cssVar": true,
+                "cssVarVal": "mapToColor",
+                "dft": "primary"
+            },
+            {
+                "name": "popupBackgroundColor",
+                "type": "string",
+                "desc": "The background color of the picker popup",
+                "cssVar": true,
+                "cssVarVal": "mapToColor",
+                "dft": "primary"
+            },
+            {
+                "name": "popupBackgroundColorRgb",
+                "type": "string",
+                "desc": "The RGB value of the background color of the picker popup. This is needed for the 'faded' look on the options inside",
+                "spec": "r, g, b",
+                "cssVar": true,
+                "cssVarVal": "mapToColor",
+                "dft": "({ popupBackgroundColor = 'primary' }) => `var(--colors-${popupBackgroundColor}-rgb)`",
+                "internal": true
+            },
+            {
+                "name": "popupHeadingColor",
+                "type": "string",
+                "desc": "The color of the headings in the picker popup",
+                "cssVar": true,
+                "cssVarVal": "mapToColor",
+                "dft": "iconPrimary"
+            },
+            {
+                "name": "popupOptionColor",
+                "type": "string",
+                "desc": "The color of the options' text in the picker popup",
+                "cssVar": true,
+                "cssVarVal": "mapToColor",
+                "dft": "iconPrimary"
+            },
+            {
+                "name": "popupAmPmColor",
+                "type": "string",
+                "desc": "The color of the text in the AM/PM buttons",
+                "cssVar": true,
+                "cssVarVal": "mapToColor",
+                "dft": "iconPrimary"
+            },
+            {
+                "name": "popupAmPmColorHover",
+                "type": "string",
+                "desc": "The color of the text in the AM/PM buttons when the user hovers on it",
+                "cssVar": true,
+                "cssVarVal": "mapToColor",
+                "dft": "iconPrimary"
+            },
+            {
+                "name": "popupAmPmColorActive",
+                "type": "string",
+                "desc": "The color of the text in the AM/PM buttons when they are selected",
+                "cssVar": true,
+                "cssVarVal": "mapToColor",
+                "dft": "primary"
+            },
+            {
+                "name": "popupAmPmBackgroundColorHover",
+                "type": "string",
+                "desc": "The background color of the AM/PM buttons when the user hovers on them",
+                "spec": "A color theme key like \"primary\"",
+                "cssVar": true,
+                "cssVarVal": "v => `var(--colors-${v}-rgb)`",
+                "dft": "iconPrimary"
+            },
+            {
+                "name": "popupAmPmBackgroundColorHoverOpacity",
+                "type": "decimal",
+                "desc": "The opacity of the background color of the AM/PM buttons when the user hovers on them",
+                "cssVar": true,
+                "cssVarVal": true,
+                "dft": 0.2
+            },
+            {
+                "name": "popupAmPmBackgroundColorActive",
+                "type": "string",
+                "desc": "The background color of the AM/PM buttons when they are selected",
+                "cssVar": true,
+                "cssVarVal": "mapToColor",
+                "dft": "iconPrimary"
+            },
+            {
+                "name": "popupHeight",
+                "type": "string",
+                "desc": "The height, in px of the popup container",
+                "spec": "200px",
+                "cssVar": true,
+                "cssVarVal": "mapToSize",
+                "dft": "200px"
+            }
+        ]
+    }
+]

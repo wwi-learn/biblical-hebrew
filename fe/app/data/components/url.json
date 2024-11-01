@@ -1,0 +1,47 @@
+[
+    {
+        "name": "url",
+        "description": "Provides a clickable link to a web link",
+        "usage": {
+            "type": "url",
+            "prps": {
+                "value": "https://www.facebook.com",
+                "title": "google",
+                "width": "200px",
+                "height": "200px",
+                "enableScroll": "auto"
+            }
+        },
+        "propSpec": [
+            {
+                "name": "value",
+                "type": "string",
+                "desc": "A string defining the url"
+            },
+            {
+                "name": "height",
+                "type": "string",
+                "desc": "A string that defines the url's height (usually in px)",
+                "dft": "600px"
+            },
+            {
+                "name": "width",
+                "type": "string",
+                "desc": "A string that defines the url's width (usually in px)",
+                "dft": "400px"
+            },
+            {
+                "name": "enableScroll",
+                "type": "string",
+                "desc": "A string defining how scrolling should take place",
+                "dft": "auto"
+            },
+            {
+                "name": "title",
+                "type": "string",
+                "desc": "A string defining the title of the iframe",
+                "dft": "iframe"
+            }
+        ]
+    }
+]

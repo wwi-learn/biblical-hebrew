@@ -1,0 +1,66 @@
+[
+    {
+        "name": "deleteKeys",
+        "desc": "This action deletes keys from objectse",
+        "exampleDesc": "In this example, the deleteKeys action type deletes a key or multiple keys from the object in the test variable",
+        "usage": {
+            "type": "containerSimple",
+            "prps": {
+                "scps": [
+                    {
+                        "actions": [
+                            {
+                                "type": "setVariable",
+                                "name": "test",
+                                "value": {
+                                    "a": {
+                                        "id": 1,
+                                        "name": "John Doe"
+                                    },
+                                    "b": [
+                                        {
+                                            "id": 1,
+                                            "name": "John Doe"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "deleteKeys",
+                                "paths": [
+                                    "a.name",
+                                    "b.0.id"
+                                ],
+                                "value": "{{variable.test}}"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "wgts": [
+                {
+                    "type": "label",
+                    "prps": {
+                        "cpt": "My label"
+                    }
+                }
+            ]
+        },
+        "propSpec": [
+            {
+                "key": "paths",
+                "dataType": "array",
+                "mandatory": true,
+                "dft": "",
+                "desc": ""
+            },
+            {
+                "key": "value",
+                "dataType": "array",
+                "mandatory": true,
+                "dft": "",
+                "desc": ""
+            }
+        ]
+    }
+]

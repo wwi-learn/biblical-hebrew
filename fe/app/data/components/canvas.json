@@ -1,0 +1,57 @@
+[
+    {
+        "name": "canvas",
+        "description": "Component for displaying canvases",
+        "usage": {
+            "type": "canvas",
+            "prps": {}
+        },
+        "propSpec": [
+            {
+                "name": "tClear",
+                "type": "boolean",
+                "desc": "When set to true, the canvas will be cleared"
+            },
+            {
+                "name": "tLoadValue",
+                "type": "base4 string",
+                "desc": "Defines a base64 string to be loaded and drawn on the canvas"
+            },
+            {
+                "name": "tClearAndLoadValue",
+                "type": "base64 string",
+                "desc": "Functions the same as tLoadValue but will clear the canvas before loading the image"
+            },
+            {
+                "name": "penColor",
+                "type": "string",
+                "desc": "Defines the color of the pen stroke",
+                "spec": "{theme.name.key}",
+                "dft": "{theme.colors.primary}"
+            },
+            {
+                "name": "penMinWidth",
+                "type": "number",
+                "desc": "Defines the minimum width of the pen stroke. The faster the pen moves, the narrower the stroke will become (but no less than this limit)",
+                "dft": 1
+            },
+            {
+                "name": "penMaxWidth",
+                "type": "number",
+                "desc": "Defines the maximum width of the pen stroke. The slower the pen moves, the thicker the stroke will become (but no more than this limit)",
+                "dft": 2
+            },
+            {
+                "name": "ref",
+                "type": "refObject",
+                "desc": "A reference to the canvas DOM node",
+                "internal": true
+            },
+            {
+                "name": "value",
+                "type": "string",
+                "desc": "The base64 representation of the drawn image"
+            }
+        ]
+    }
+]

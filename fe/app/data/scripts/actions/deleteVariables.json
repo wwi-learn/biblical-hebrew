@@ -1,0 +1,53 @@
+[
+    {
+        "name": "deleteVariables",
+        "desc": " Delete Variables is used to delete a list of variables. This is used to reduce memory.",
+        "exampleDesc": "",
+        "usage": {
+            "type": "container",
+            "prps": {
+                "icons": [
+                    "face",
+                    "flare"
+                ],
+                "scps": [
+                    {
+                        "triggers": [
+                            {
+                                "event": "onMount"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "setVariable",
+                                "value": "{{state.self.icons}}",
+                                "name": "icons"
+                            },
+                            {
+                                "type": "setVariable",
+                                "value": "a",
+                                "name": "letter"
+                            },
+                            {
+                                "type": "deleteVariables",
+                                "variables": [
+                                    "icons",
+                                    "letter"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "propSpec": [
+            {
+                "key": "variables",
+                "dataType": "array",
+                "mandatory": true,
+                "dft": "",
+                "desc": "A list of variable names that will be deleted"
+            }
+        ]
+    }
+]

@@ -1,0 +1,20 @@
+[
+    {
+        "name": "onBlur",
+        "desc": "Fires when an input component loses focus",
+        "exampleDesc": "",
+        "usage": {
+            "event": "onBlur",
+            "source": "inputUsername"
+        },
+        "propSpec": [
+            {
+                "key": "source",
+                "dataType": "string",
+                "mandatory": false,
+                "dft": "script owner id",
+                "desc": "The id of the component we want to listen for mount events on"
+            }
+        ]
+    }
+]

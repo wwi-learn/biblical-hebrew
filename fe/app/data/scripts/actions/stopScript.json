@@ -1,0 +1,24 @@
+[
+    {
+        "name": "stopScript",
+        "desc": "Sometimes, one needs to stop the execution of any consecutive actions. While applyComparison can be used to achieve this, it often creates unnecessary branching (and indentation in your JSON). The stopScript action type serves exactly this purpose.",
+        "exampleDesc": "In this example, a condition is provided under which the script must stop running. However, note that a condition is not required. When none is provided, the script will stop under all situations.",
+        "usage": {
+            "type": "stopScript",
+            "^condition": {
+                "operator": "isEqual",
+                "value": "((state.input.value))",
+                "compareValue": "some value"
+            }
+        },
+        "propSpec": [
+            {
+                "key": "condition",
+                "dataType": "object",
+                "mandatory": true,
+                "dft": "",
+                "desc": "A condition that will be sent into an applyComparison check. If the condition evaluates to true, the script will stop running immediate"
+            }
+        ]
+    }
+]

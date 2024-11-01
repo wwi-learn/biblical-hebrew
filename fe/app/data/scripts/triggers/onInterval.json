@@ -1,0 +1,20 @@
+[
+    {
+        "name": "onInterval",
+        "desc": "onInterval causes a script to run every delay ms",
+        "exampleDesc": "",
+        "usage": {
+            "event": "onInterval",
+            "source": "componentId"
+        },
+        "propSpec": [
+            {
+                "key": "source",
+                "dataType": "string",
+                "mandatory": false,
+                "dft": "script owner id",
+                "desc": "The id of the component we want to listen for interval events on"
+            }
+        ]
+    }
+]

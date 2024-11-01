@@ -1,0 +1,84 @@
+[
+    {
+        "name": "exitLoop",
+        "desc": "This exitLoop action goes hand to hand with the forLoop action that is used to repeat a certain action known number of times. Use case for this action is if you want to exit a a forLoop action once a certain condition has been met. (Usually to iterate over an array and once a specific value has been found in that array, the loop needs to stop executing)",
+        "exampleDesc": "In this example, the forLoop will run 10 times. Once the rowNumber is 5, the forLoop will stop executing (exitLoop).",
+        "usage": {
+            "type": "label",
+            "prps": {
+                "cpt": 0,
+                "scps": [
+                    {
+                        "triggers": [
+                            {
+                                "event": "onMount"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "forLoop",
+                                "loopId": "innerScpsId",
+                                "count": 10,
+                                "actions": [
+                                    {
+                                        "type": "applyComparison",
+                                        "operator": "isEqual",
+                                        "value": "{{variable.rowNumber}}",
+                                        "compareValue": 5,
+                                        "branch": {
+                                            "true": [
+                                                {
+                                                    "type": "exitLoop",
+                                                    "loopIds": [
+                                                        "innerScpsId"
+                                                    ]
+                                                }
+                                            ],
+                                            "false": [
+                                                {
+                                                    "type": "setState",
+                                                    "key": "cpt",
+                                                    "msg": "((variable.rowNumber))"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "propSpec": [
+            {
+                "key": "loopId",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": "Defines the id for the script. While using a exitLoop, this key is mandatory, it would be impossible to exit the loop without having a loop it. You need to tell the exitLoop action which forLoop you want to exit once a desired condition has been met."
+            },
+            {
+                "key": "count",
+                "dataType": "integer",
+                "mandatory": true,
+                "dft": "",
+                "desc": "How many times the action should be looped"
+            },
+            {
+                "key": "target",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": "Where the action should be set to inside the forLoop"
+            },
+            {
+                "key": "rowNumberVarName",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "rowNumber",
+                "desc": "The name of the variable in which the row number for each record will be placed when performing the comparison"
+            }
+        ]
+    }
+]

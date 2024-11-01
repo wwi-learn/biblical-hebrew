@@ -1,0 +1,20 @@
+[
+    {
+        "name": "log",
+        "desc": "Sometimes, it’s useful to see the value of a certain state/variable while executing a script for debug purposes. Using the log action, we can send output to the browser’s console",
+        "exampleDesc": "",
+        "usage": {
+            "type": "log",
+            "msg": "The value of the input is currently ((state.inputUsername.value))"
+        },
+        "propSpec": [
+            {
+                "key": "msg",
+                "dataType": "mixed",
+                "mandatory": true,
+                "dft": "",
+                "desc": "Message that you wish to disolay in the console"
+            }
+        ]
+    }
+]

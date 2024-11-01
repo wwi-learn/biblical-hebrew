@@ -1,0 +1,53 @@
+[
+    {
+        "name": "videoPlayer",
+        "description": "Component for playing video media files",
+        "usage": {
+            "type": "videoPlayer",
+            "prps": {
+                "value": "https://www.youtube.com/embed/iyNA62FrKCE",
+                "width": "700px",
+                "height": "500px",
+                "controls": true,
+                "autoPlay": false
+            }
+        },
+        "propSpec": [
+            {
+                "name": "value",
+                "type": "string",
+                "desc": "The source where to get the video from"
+            },
+            {
+                "name": "width",
+                "type": "string",
+                "desc": "A string specifying the width of the video player"
+            },
+            {
+                "name": "height",
+                "type": "string",
+                "desc": "A string specifying the height of the video player"
+            },
+            {
+                "name": "controls",
+                "type": "boolean",
+                "desc": "When true, the video player's controls will be shown"
+            },
+            {
+                "name": "autoPlay",
+                "type": "boolean",
+                "desc": "When true, the video player will autoplay"
+            },
+            {
+                "name": "type",
+                "type": "string",
+                "desc": "A string that specifies the type of video being played"
+            },
+            {
+                "name": "hasLabel",
+                "type": "boolean",
+                "desc": "When true, the video player will have a label"
+            }
+        ]
+    }
+]

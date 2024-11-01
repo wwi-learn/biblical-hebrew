@@ -1,0 +1,49 @@
+[
+    {
+        "name": "morphIterateArray (forEach)",
+        "desc": "JUST EXAMPLE CODE, WORK IN PROGRESS",
+        "exampleDesc": "",
+        "usage": {
+            "id": "morpher",
+            "type": "morphIterateArray",
+            "recordVarName": "innerRecord",
+            "value": "{{state.self.someArray}}",
+            "chain": [
+                {
+                    "type": "log",
+                    "msg": "{{morpher.variable.innerRecord}}"
+                }
+            ]
+        },
+        "propSpec": [
+            {
+                "key": "id",
+                "dataType": "string",
+                "mandatory": false,
+                "dft": "",
+                "desc": "Defines the id for the chain actions"
+            },
+            {
+                "key": "value",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The array that should be morphed over"
+            },
+            {
+                "key": "chain",
+                "dataType": "array",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The chain of actions to be performed for each record"
+            },
+            {
+                "key": "recordVarName",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "record",
+                "desc": "The name of the variable where the record will be stored inside the action chain"
+            }
+        ]
+    }
+]

@@ -1,0 +1,28 @@
+[
+    {
+        "name": "progressBar",
+        "description": "Not provided",
+        "usage": {
+            "type": "progressBar",
+            "prps": {
+                "value": 10,
+                "colorBar": "red"
+            }
+        },
+        "propSpec": [
+            {
+                "type": "value",
+                "desc": "A value to be displayed that, when passed, will set the progress bar as determinate, and progress will be indicated",
+                "classMap": "determinate",
+                "cssVar": "bar-width",
+                "cssVarVal": "v => `${v}%`"
+            },
+            {
+                "type": "colorBar",
+                "desc": "The background color of the progress indicator bar",
+                "cssVar": true,
+                "cssVarVal": "mapToColor"
+            }
+        ]
+    }
+]

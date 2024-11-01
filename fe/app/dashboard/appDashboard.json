@@ -1,0 +1,78 @@
+{
+    "type": "containerSimple",
+    "prps": {
+        "singlePage": true,
+        "backgroundColor": "themeBackground",
+        "mainAxisAlign": "center",
+        "crossAxisAlign": "center",
+        "gap": "24px"
+    },
+    "wgts": [
+        {
+            "traits": [
+                {
+                    "trait": "title",
+                    "traitPrps": {
+                        "title": "איזה דפוס"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "clicker",
+            "prps": {
+                "topText": "Click me",
+                "bottomText": "You have clicked %1 time(s)",
+                "color": "{theme.colors.themeWhite}"
+            }
+        },
+        {
+            "type": "button",
+            "prps": {
+                "caption": "Change Theme",
+                "color": "themeTeal",
+                "height": "30px",
+                "marginTop": "mediumPadding",
+                "roundedBorders": true,
+                "borderRadius": "3px",
+                "onClick": {
+                    "action": "changeTheme"
+                }
+            }
+        },
+        {
+            "type": "button",
+            "prps": {
+                "caption": "Change App Mode",
+                "color": "themeTeal",
+                "height": "30px",
+                "marginTop": "mediumPadding",
+                "roundedBorders": true,
+                "borderRadius": "3px",
+                "onClick": {
+                    "action": "changeAppMode"
+                }
+            }
+        },
+        {
+            "type": "label",
+            "prps": {
+                "caption": "Theme: {theme.system.theme}",
+                "position": "absolute",
+                "right": "mediumPadding",
+                "bottom": "mediumPadding",
+                "color": "themeTeal"
+            }
+        }
+        {
+            "type": "label",
+            "prps": {
+                "caption": "App Mode: {theme.system.appMode}",
+                "position": "absolute",
+                "right": "mediumPadding",
+                "bottom": "mediumPadding",
+                "color": "themeTeal"
+            }
+        }
+    ]
+}

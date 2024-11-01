@@ -1,0 +1,53 @@
+[
+    {
+        "name": "joinArray",
+        "desc": "Join Array is an Action used to combine an array of values and output them as a single string with a defined Separator.",
+        "exampleDesc": "This Example will output: face, flare",
+        "usage": {
+            "type": "container",
+            "prps": {
+                "icons": [
+                    "face",
+                    "flare"
+                ],
+                "scps": [
+                    {
+                        "triggers": [
+                            {
+                                "event": "onMount"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "joinArray",
+                                "value": "{{state.self.icons}}",
+                                "separator": ", ",
+                                "storeAsVariable": "result"
+                            },
+                            {
+                                "type": "log",
+                                "msg": "{{variable.result}}"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "propSpec": [
+            {
+                "key": "value",
+                "dataType": "array",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The array that is being joined into a string"
+            },
+            {
+                "key": "separator",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The string that will be inserted between each value of the array when the string is built"
+            }
+        ]
+    }
+]

@@ -1,0 +1,27 @@
+[
+    {
+        "name": "tab",
+        "description": "Not provided",
+        "usage": {
+            "type": "tab",
+            "prps": {
+                "enabled": true,
+                "active": true
+            }
+        },
+        "propSpec": [
+            {
+                "name": "enabled",
+                " type": "boolean",
+                "desc": "When true, the tab is enabled.",
+                "dft": true
+            },
+            {
+                "name": "active",
+                "type": "boolean",
+                "desc": "Indicates that a tab is currently active and its contents can be viewed",
+                "dft": false
+            }
+        ]
+    }
+]

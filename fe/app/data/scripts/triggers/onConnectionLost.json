@@ -1,0 +1,30 @@
+[
+    {
+        "name": "onConnectionLost",
+        "desc": "Fires when: The browser is set to offline mode. Wi-Fi / Mobile data is switched off on a mobile device.  A mobile device moves out of range of a Wi-Fi network. Does not fire when: An ethernet adapter is disabled on a desktop device",
+        "exampleDesc": "",
+        "usage": {
+            "type": "label",
+            "prps": {
+                "cpt": "No event fired yet",
+                "scps": [
+                    {
+                        "triggers": [
+                            {
+                                "event": "onConnectionLost"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "setState",
+                                "key": "cpt",
+                                "value": "Connection lost"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "propSpec": []
+    }
+]

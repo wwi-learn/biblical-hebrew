@@ -1,0 +1,20 @@
+[
+    {
+        "name": "openUrl",
+        "desc": "This action opens a new tab with the provided url",
+        "exampleDesc": "",
+        "usage": {
+            "type": "openUrl",
+            "url": "https://www.google.com"
+        },
+        "propSpec": [
+            {
+                "key": "url",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The url to open"
+            }
+        ]
+    }
+]

@@ -1,0 +1,148 @@
+[
+    {
+        "name": "mapLocationIq",
+        "description": "Not provided",
+        "usage": {
+            "type": "mapLocationIq",
+            "prps": {}
+        },
+        "propSpec": [
+            {
+                "name": "key",
+                "type": "string",
+                "desc": "The locationIq access key",
+                "dft": "pk.740ddb9f1b472ff78613988039cd5afd"
+            },
+            {
+                "name": "pins",
+                "type": "array",
+                "desc": "An array of pins that should be rendered. Each object needs { [keyLat], [keyLon] } based on what the properties have been set to",
+                "spec": [
+                    {
+                        "lat": 1.23,
+                        "lon": -3.45
+                    },
+                    {
+                        "lat": 2.34,
+                        "lon": -4.56,
+                        "pinIcon": "place",
+                        "pinSize": "72px",
+                        "pinColor": "var(--colors-primary)"
+                    }
+                ]
+            },
+            {
+                "name": "keyLat",
+                "type": "string",
+                "desc": "The key (in each pin object) that defines the latitude",
+                "dft": "lat"
+            },
+            {
+                "name": "keyLon",
+                "type": "string",
+                "desc": "The key (in each pin object) that defines the longitude",
+                "dft": "lon"
+            },
+            {
+                "name": "keyPinIcon",
+                "type": "string",
+                "desc": "The key (in each pin object) that defines an override for the pin icon",
+                "dft": "pinIcon"
+            },
+            {
+                "name": "keyPinSize",
+                "type": "string",
+                "desc": "The key (in each pin object) that defines an override for the pin's font size",
+                "dft": "pinSize"
+            },
+            {
+                "name": "keyPinColor",
+                "type": "string",
+                "desc": "The key (in each pin object) that defines an override for the pin color",
+                "dft": "pinColor"
+            },
+            {
+                "name": "centerLat",
+                "type": "decimal",
+                "desc": "Defines the latitude of the point around which the view should be centered",
+                "dft": 1.23
+            },
+            {
+                "name": "centerLon",
+                "type": "decimal",
+                "desc": "Defines the longitude of the point around which the view should be centered",
+                "dft": -2.34
+            },
+            {
+                "name": "zoom",
+                "type": "integer",
+                "desc": "Defines the zoom level of the view",
+                "dft": 12
+            },
+            {
+                "name": "hasControls",
+                "type": "boolean",
+                "desc": "When set to false, the map controls will not be displayed",
+                "dft": false,
+                "classMap": true
+            },
+            {
+                "name": "routeFrom",
+                "type": "object",
+                "desc": "Sets the coordinate of the location from which the route should be calculated",
+                "spec": {
+                    "lat": 1.23,
+                    "lon": -3.45
+                }
+            },
+            {
+                "name": "routeTo",
+                "type": "object",
+                "desc": "Sets the coordinate of the location to which the route should be calculated",
+                "spec": {
+                    "lat": 2.34,
+                    "lon": -4.56
+                }
+            },
+            {
+                "name": "pinIcon",
+                "type": "string",
+                "desc": "Defines the name of the icon that should be rendered on pin locations",
+                "dft": "place"
+            },
+            {
+                "name": "pinColor",
+                "type": "string",
+                "desc": "Defines the colour of the pins on the map",
+                "dft": "var(--colors-primary)"
+            },
+            {
+                "name": "pinSize",
+                "type": "string",
+                "desc": "The font size of the pin icons on the map",
+                "dft": "48px"
+            },
+            {
+                "name": "routeColorRgbArray",
+                "type": "array",
+                "desc": "An RGB array used to render the path (if a route is defined)",
+                "spec": [
+                    255,
+                    0,
+                    0
+                ],
+                "dft": [
+                    0,
+                    178,
+                    254
+                ]
+            },
+            {
+                "name": "routeWidth",
+                "type": "integer",
+                "desc": "Defines the width (in px) of the rendered path (if a route is defined)",
+                "dft": 4
+            }
+        ]
+    }
+]

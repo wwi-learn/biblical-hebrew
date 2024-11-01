@@ -1,0 +1,74 @@
+[
+    {
+        "name": "pdfViewer",
+        "description": "Not provided",
+        "usage": {
+            "type": "divider",
+            "prps": {
+                "color": "green",
+                "thickness": "6px"
+            }
+        },
+        "propSpec": [
+            {
+                "name": "pageNumber",
+                "type": "number",
+                "desc": "The current page number for the doc",
+                "dft": 1
+            },
+            {
+                "name": "scale",
+                "type": "number",
+                "desc": "A number defining the zoom level",
+                "dft": 1
+            },
+            {
+                "name": "minScale",
+                "type": "number",
+                "desc": "A number defining the minimum scale value",
+                "dft": 1
+            },
+            {
+                "name": "maxScale",
+                "type": "number",
+                "desc": "A number defining the maximum scale value",
+                "dft": 10
+            },
+            {
+                "name": "value",
+                "type": "string",
+                "desc": "The path pointing to the pdf document to view"
+            },
+            {
+                "name": "rotationStep",
+                "type": "number",
+                "desc": "A number defining the rotation step",
+                "dft": 90
+            },
+            {
+                "name": "doDownload",
+                "type": "boolean",
+                "desc": "When true, the pdf viewer will be downloaded",
+                "dft": false
+            },
+            {
+                "name": "doReset",
+                "type": "integer",
+                "desc": "When true, the pdf viewer will be reset",
+                "dft": false
+            },
+            {
+                "name": "doPage",
+                "type": "integer",
+                "desc": "A number specifying current pdf page",
+                "dft": 0
+            },
+            {
+                "name": "rotation",
+                "type": "number",
+                "desc": "A number specifying current document rotation",
+                "dft": 0
+            }
+        ]
+    }
+]

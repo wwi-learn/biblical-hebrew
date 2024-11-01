@@ -1,0 +1,116 @@
+[
+    {
+        "name": "resizer",
+        "description": "Not provided",
+        "usage": {
+            "type": "containerSimple",
+            "prps": {
+                "singlePage": true,
+                "backgroundColor": "lightGrey"
+            },
+            "wgts": [
+                {
+                    "scope": "box",
+                    "type": "containerSimple",
+                    "prps": {
+                        "hasShadow": true,
+                        "roundedBorders": true,
+                        "backgroundColor": "white",
+                        "width": 500,
+                        "height": 500,
+                        "position": "absolute",
+                        "left": 100,
+                        "top": 100
+                    },
+                    "wgts": [
+                        {
+                            "type": "resizer",
+                            "prps": {
+                                "width": 3,
+                                "height": 50,
+                                "position": "absolute",
+                                "right": 0,
+                                "top": "calc(50% - 25px)",
+                                "backgroundColor": "red",
+                                "cursor": "col-resize",
+                                "scps": [
+                                    {
+                                        "id": "s1",
+                                        "triggers": [
+                                            {
+                                                "event": "onStateChange",
+                                                "key": "isResizing",
+                                                "match": [
+                                                    {
+                                                        "operator": "isTruthy",
+                                                        "key": "isResizing"
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "type": "getComponentWidth",
+                                                "target": "||box||",
+                                                "storeAsVariable": "originalWidth"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "s1",
+                                        "triggers": [
+                                            {
+                                                "event": "onStateChange",
+                                                "key": "dx"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "type": "setState",
+                                                "target": "||box||",
+                                                "key": "width",
+                                                "value": "{{eval.{{variable.originalWidth}} + {{state.self.dx}}}}"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "propSpec": [
+            {
+                "name": "isResizing",
+                "type": "boolean",
+                "desc": "Indicates whether resizing is currently happening"
+            },
+            {
+                "name": "grabX",
+                "type": "integer",
+                "desc": "The x position the mouse was at when resizing started"
+            },
+            {
+                "name": "x",
+                "type": "integer",
+                "desc": "The current x position of the mouse"
+            },
+            {
+                "name": "y",
+                "type": "integer",
+                "desc": "The current y position of the mouse"
+            },
+            {
+                "name": "dx",
+                "type": "integer",
+                "desc": "The x delta. How far the user has already performed a resize action along the horizontal axis"
+            },
+            {
+                "name": "dy",
+                "type": "integer",
+                "desc": "The y delta. How far the user has already performed a resize action along the vertical axis"
+            }
+        ]
+    }
+]

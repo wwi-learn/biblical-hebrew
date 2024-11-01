@@ -1,0 +1,29 @@
+[
+    {
+        "name": "generateRandomInteger",
+        "desc": "Used to Generate a random number between a min and max value",
+        "exampleDesc": "",
+        "usage": {
+            "type": "generateRandomInteger",
+            "min": 0,
+            "max": 10,
+            "storeAsVariable": "randomNumber"
+        },
+        "propSpec": [
+            {
+                "key": "min",
+                "dataType": "integer",
+                "mandatory": false,
+                "dft": "",
+                "desc": "minimum value used"
+            },
+            {
+                "key": "max",
+                "dataType": "integer",
+                "mandatory": false,
+                "dft": "",
+                "desc": "maximum value used"
+            }
+        ]
+    }
+]

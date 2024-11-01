@@ -1,0 +1,71 @@
+[
+    {
+        "name": "removeStylesheet",
+        "desc": "This action will remove a stylesheet",
+        "exampleDesc": "",
+        "usage": {
+            "type": "containerSimple",
+            "prps": {
+                "singlePage": true
+            },
+            "wgts": [
+                {
+                    "type": "icon",
+                    "prps": {
+                        "value": "face",
+                        "animationName": "testBounce",
+                        "animationDuration": "0.2s",
+                        "animationIterationCount": "infinite",
+                        "scps": [
+                            {
+                                "id": "sRegisterStylesheet",
+                                "actions": [
+                                    {
+                                        "type": "registerStylesheet",
+                                        "storeAsVariable": "idStylesheet",
+                                        "stylesheet": {
+                                            "@keyframes testBounce": {
+                                                "0%": {
+                                                    "margin-top": "0px"
+                                                },
+                                                "50%": {
+                                                    "margin-top": "10px"
+                                                },
+                                                "100%": {
+                                                    "margin-top": "0px"
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "sRegisterStylesheet",
+                                "triggers": [
+                                    {
+                                        "event": "onUnmount"
+                                    }
+                                ],
+                                "actions": [
+                                    {
+                                        "type": "removeStylesheet",
+                                        "target": "((variable.idStylesheet))"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "propSpec": [
+            {
+                "key": "target",
+                "dataType": "mixed",
+                "mandatory": true,
+                "dft": "",
+                "desc": "targets the id of the stylesheet to be removed"
+            }
+        ]
+    }
+]

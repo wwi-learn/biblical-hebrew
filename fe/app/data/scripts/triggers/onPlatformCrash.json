@@ -1,0 +1,60 @@
+[
+    {
+        "name": "onPlatformCrash",
+        "desc": "Fires whenever something causes the platform to crash. An example of why this is useful is when the error message needs to be logged in a database for debugging purposes.",
+        "exampleDesc": "In this example, a mapFunctionString causes a crash. When this happens, the error message and stack trace will be logged in the console.",
+        "usage": {
+            "type": "containerSimple",
+            "wgts": [
+                {
+                    "type": "button",
+                    "prps": {
+                        "cpt": "Crash",
+                        "fireScript": {
+                            "actions": [
+                                {
+                                    "type": "setState",
+                                    "key": "temp",
+                                    "value": true
+                                }
+                            ]
+                        },
+                        "flows": [
+                            {
+                                "fromKey": "temp",
+                                "toKey": "temp2",
+                                "mapFunctionString": "v => v.a.b.c"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "label",
+                    "prps": {
+                        "cpt": "No crash intercepted yet...",
+                        "scps": [
+                            {
+                                "triggers": [
+                                    {
+                                        "event": "onPlatformCrash"
+                                    }
+                                ],
+                                "actions": [
+                                    {
+                                        "type": "log",
+                                        "msg": "((variable.error))"
+                                    },
+                                    {
+                                        "type": "log",
+                                        "msg": "{{variable.stackTrace}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "propSpec": []
+    }
+]

@@ -1,0 +1,66 @@
+[
+    {
+        "name": "concatArray",
+        "desc": "This a convenience action that removes the need to use a combination of setVariable, forLoop, and pushVariable actions in order to concatenate the entries of two arrays.e",
+        "exampleDesc": "In this example, the entries of the iconsNew array is added to the end of the icons array. The result is then placed back into the icons state.",
+        "usage": {
+            "type": "container",
+            "prps": {
+                "icons": [
+                    {
+                        "icon": "face"
+                    },
+                    {
+                        "icon": "flare"
+                    }
+                ],
+                "iconsNew": [
+                    {
+                        "icon": "phone"
+                    },
+                    {
+                        "icon": "home"
+                    }
+                ],
+                "scps": [
+                    {
+                        "triggers": [
+                            {
+                                "event": "onMount"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "concatArray",
+                                "value": "{{state.self.icons}}",
+                                "concatValue": "{{state.self.iconsNew}}",
+                                "storeAsVariable": "result"
+                            },
+                            {
+                                "type": "setState",
+                                "key": "icons",
+                                "value": "{{variable.result}}"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "propSpec": [
+            {
+                "key": "value",
+                "dataType": "mixed",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The target array (receives new entries)"
+            },
+            {
+                "key": "concatValue",
+                "dataType": "mixed",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The source array (provides the entries that will be pushed into the target array)"
+            }
+        ]
+    }
+]

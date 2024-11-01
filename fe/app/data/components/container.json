@@ -1,0 +1,91 @@
+[
+    {
+        "name": "container",
+        "description": "generic container or division compoment that is used to group other compoments/elements together",
+        "usage": {
+            "type": "container",
+            "prps": {
+                "canClick": true,
+                "fireScript": {
+                    "actions": [
+                        {
+                            "type": "log",
+                            "msg": "label clicked"
+                        }
+                    ]
+                }
+            },
+            "wgts": [
+                {
+                    "type": "label",
+                    "prps": {
+                        "cpt": "Click Me",
+                        "color": "#ffffff"
+                    }
+                }
+            ]
+        },
+        "propSpec": [
+            {
+                "name": "handlerOnScroll",
+                "type": "function",
+                "desc": "The handler function to be executed on scroll"
+            },
+            {
+                "name": "canHover",
+                "type": "boolean",
+                "desc": "When true, hover styles will be applied to the container",
+                "classMap": true
+            },
+            {
+                "name": "canClick",
+                "type": "boolean",
+                "desc": "When true, the container will be clickable",
+                "classMap": true
+            },
+            {
+                "name": "handlerOnClick",
+                "type": "function",
+                "desc": "The handler function to be executed when the container is clicked"
+            },
+            {
+                "name": "fireScript",
+                "type": "object",
+                "desc": "A script object which is passed to scriptRunner to be executed"
+            },
+            {
+                "name": "renderChildren",
+                "type": "boolean",
+                "desc": "When this is false, child components won't be rendered",
+                "dft": true
+            },
+            {
+                "name": "renderChildrenWhenInvis",
+                "type": "boolean",
+                "desc": "When this is false and the container is invisible (vis: false), child components won't be rendered. This property is overriden by renderChildren",
+                "dft": false
+            },
+            {
+                "name": "extraWgts",
+                "type": "mixed",
+                "desc": "A single metadata object, or array of metadata objects that should be added to the container's list of children",
+                "dft": "() => []",
+                "setAction": "TODO(FUNCTION)",
+                "deleteAction:": "TODO(FUNCTION)"
+            },
+            {
+                "name": "clicked",
+                "type": "boolean",
+                "desc": "An internal prop used to fire the clicked handler",
+                "internal": true
+            },
+            {
+                "name": "hovered",
+                "type": "boolean",
+                "desc": "When true, the container is being hovered on",
+                "internal": true,
+                "dft": "({ canHover }) => canHover ? false : undefined"
+            }
+        ]
+    }
+]

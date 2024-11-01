@@ -1,0 +1,20 @@
+[
+    {
+        "name": "onScrollComponent",
+        "desc": "Fires when a scroll axes changes on a specified component",
+        "exampleDesc": "",
+        "usage": {
+            "event": "onScrollComponent",
+            "source": "componentId"
+        },
+        "propSpec": [
+            {
+                "key": "source",
+                "dataType": "string",
+                "mandatory": false,
+                "dft": "script owner id",
+                "desc": "The id of the component we want to listen for scrollComponent events on"
+            }
+        ]
+    }
+]

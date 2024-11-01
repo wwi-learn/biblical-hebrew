@@ -1,0 +1,48 @@
+[
+    {
+        "name": "zoomPanner",
+        "description": "Not Provided",
+        "usage": {
+            "type": "zoomPanner",
+            "prps": {
+                "color": "green",
+                "thickness": "6px"
+            }
+        },
+        "propSpec": [
+            {
+                "name": "canvasSize",
+                "type": "integer",
+                "desc": "The square size of the canvas. If the size is 1000, the midpoint will actually be [0, 0] and the top-left point will be [-500, -500]",
+                "dft": 10000
+            },
+            {
+                "name": "tZoomToFit",
+                "type": "boolean",
+                "desc": "Set to true to auto pan and zoom the canvas to display all child components",
+                "dft": false
+            },
+            {
+                "name": "zoomToFitElementsSelector",
+                "type": "string",
+                "desc": "When set, only child components that match this CSS selector will be included in the calculation. See examples here: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_selectors"
+            },
+            {
+                "name": "excludedClassesPanning",
+                "type": "array",
+                "desc": "An array of class names that, when hovered over, should not allow panning",
+                "dft": "excludedClassesDft"
+            },
+            {
+                "name": "excludedClassesWheelZooming",
+                "type": "array",
+                "desc": "An array of class names that, when hovered over, should not allow 'mouse wheel zooming'"
+            },
+            {
+                "name": "excludedClassesPinchZooming",
+                "type": "array",
+                "desc": "An array of class names that, when hovered over, should not 'piunch gesture zooming'"
+            }
+        ]
+    }
+]

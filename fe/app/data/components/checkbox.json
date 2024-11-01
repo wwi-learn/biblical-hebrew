@@ -1,0 +1,140 @@
+[
+    {
+        "name": "checkbox",
+        "description": "component that allows users to toggle between two states to indicate a choice or selection, typically checked or unchecked.",
+        "usage": {
+            "type": "checkbox",
+            "prps": {
+                "value": false,
+                "prpsIcon": {
+                    "color": "#ffffff"
+                }
+            }
+        },
+        "propSpec": [
+            {
+                "name": "value",
+                "type": "boolean",
+                "desc": "The value of the checkbox"
+            },
+            {
+                "name": " triState",
+                "type": "boolean",
+                "desc": "When true, the checkbox will have a triState indicator (see https://en.wiktionary.org/wiki/tristate)",
+                "dft": false
+            },
+            {
+                "name": "hasLabel",
+                "type": "boolean",
+                "desc": "When true, the checkbox will have a label",
+                "dft": true
+            },
+            {
+                "name": "checkboxFirst",
+                "type": "boolean",
+                "desc": "When true, the checkbox will be displayed first, followed by the label",
+                "dft": false,
+                "classMap": "checkboxFirst"
+            },
+            {
+                "name": "isSwitch",
+                "type": "boolean",
+                "desc": "When true, the checkbox will be styled as a switch",
+                "dft": false
+            },
+            {
+                "name": "handlerOnChange",
+                "type": "function",
+                "desc": "A handler function to be executed when the checkbox is clicked"
+            },
+            {
+                "name": "switchTrackAlpha",
+                "type": "decimal",
+                "desc": "A decimal number which sets the alpha of the switch track",
+                "cssVar": "switch-track-alpha",
+                "cssVarVal": true
+            },
+            {
+                "name": "switchTrackColorOff",
+                "type": "string",
+                "desc": "A string which defines the color of the switch track when the switch is off",
+                "spec": "A color theme key like \"primary\"",
+                "cssVar": "switch-track-color-off"
+            },
+            {
+                "name": "switchTrackColorOn",
+                "type": "string",
+                "desc": "A string which defines the color of the switch track when the switch is on",
+                "spec": "A color theme key like \"primary\"",
+                "cssVar": "switch-track-color-on"
+            },
+            {
+                "name": "switchHandleColorOff",
+                "type": "string",
+                "desc": "A string which defines the color of the switch handle when the switch is off",
+                "cssVar": "switch-handle-color-off",
+                "cssVarVal": "mapToColor"
+            },
+            {
+                "name": "switchHandleColorOn",
+                "type": "string",
+                "desc": "A string which defines the color of the switch handle when the switch is on",
+                "cssVar": "switch-handle-color-on",
+                "cssVarVal": "mapToColor"
+            },
+            {
+                "name": "switchHandleShadow",
+                "type": "boolean",
+                "desc": "When true, a shadow will be applied to the switch handle",
+                "classMap": "handleHasShadow",
+                "dft": true
+            },
+            {
+                "name": "switchTrackBorderStyle",
+                "type": "string",
+                "desc": "Defines the width (in px), color and style of the track's border",
+                "cssVar": "switch-track-border-style",
+                "cssVarVal": true
+            },
+            {
+                "name": "switchHandleBorderStyle",
+                "type": "string",
+                "desc": "Defines the width (in px), color and style of the handle's border",
+                "cssVar": "switch-handle-border-style",
+                "cssVarVal": true
+            },
+            {
+                "name": "autoPad",
+                "type": "boolean",
+                "classMap": true,
+                "desc": "When cpt is set and autopad is true, the caption will be automatically aligned with the checkbox",
+                "dft": "({ cpt }) => {if (cpt)return true;}}"
+            },
+            {
+                "name": "prpsIcon",
+                "type": "object",
+                "desc": "Default prps that are used by the checkbox icon"
+            },
+            {
+                "name": "prpsIconChecked",
+                "type": "object",
+                "desc": "Prps that are used by the checkbox icon when the icon is checked"
+            },
+            {
+                "name": "prpsIconUnchecked",
+                "type": "object",
+                "desc": "Prps that are used by the checkbox icon when the icon is unchecked"
+            },
+            {
+                "name": "prpsIconIndeterminate",
+                "type": "object",
+                "desc": "Prps that are used by the checkbox icon when the icon is indeterminate"
+            },
+            {
+                "name": "readOnly",
+                "type": "boolean",
+                "desc": "When true, the value of the field can not be changed by clicking on it"
+            }
+        ]
+    }
+]

@@ -1,0 +1,47 @@
+[
+    {
+        "name": "camera",
+        "description": "component that allows users to access system camera.",
+        "usage": {
+            "type": "camera",
+            "prps": {
+                "isRecording": true,
+                "defaultToCamera": true,
+                "hideFunctions": false
+            }
+        },
+        "propSpec": [
+            {
+                "name": "hasLabel",
+                "type": "boolean",
+                "desc": "When true, the camera will have a label"
+            },
+            {
+                "name": "defaultToCamera",
+                "type": "boolean",
+                "desc": "When true, the camera will be shown by default",
+                "dft": false
+            },
+            {
+                "name": "hideFunctions",
+                "type": "boolean",
+                "desc": "When true, the camera functions will be shown"
+            },
+            {
+                "name": "handleOnImageTaken",
+                "type": "function",
+                "desc": "A handler which is executed when the image is taken"
+            },
+            {
+                "name": "handleOnClear",
+                "type": "function",
+                "desc": "A handler which is executed when the clear button is pressed"
+            },
+            {
+                "name": "handleOnVideoRefChanged",
+                "type": "function",
+                "desc": "A handler which is executed the video source changes"
+            }
+        ]
+    }
+]

@@ -1,0 +1,31 @@
+[
+    {
+        "name": "divider",
+        "description": "not provided.",
+        "usage": {
+            "type": "divider",
+            "prps": {
+                "color": "green",
+                "thickness": "6px"
+            }
+        },
+        "propSpec": [
+            {
+                "name": "color",
+                "type": "string",
+                "desc": "A string defining the color of the divider",
+                "dft": "divider",
+                "cssAttr": "backgroundColor",
+                "cssAttrVal": "mapToColor"
+            },
+            {
+                "name": "thickness",
+                "type": "string",
+                "desc": "A string defining the height of the divider",
+                "dft": "dividerThickness",
+                "cssAttr": "height",
+                "cssAttrVal": "mapToSize"
+            }
+        ]
+    }
+]

@@ -1,0 +1,36 @@
+[
+    {
+        "name": "getComponentAtPosition",
+        "desc": "This action returns an array of all component id’s at are at certain position inside the browser’s viewport",
+        "exampleDesc": "",
+        "usage": {
+            "type": "getComponentAtPosition",
+            "x": 100,
+            "y": 100,
+            "storeAsVariable": "componentIdsAtPosition"
+        },
+        "propSpec": [
+            {
+                "key": "x",
+                "dataType": "number",
+                "mandatory": true,
+                "dft": "",
+                "desc": "x-axis position of the component in a viewport"
+            },
+            {
+                "key": "y",
+                "dataType": "number",
+                "mandatory": true,
+                "dft": "",
+                "desc": "y-axis position of the component in a viewport"
+            },
+            {
+                "key": "storeAsVariable",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": "Stores the result of action"
+            }
+        ]
+    }
+]

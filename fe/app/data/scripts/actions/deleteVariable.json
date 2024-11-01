@@ -1,0 +1,45 @@
+[
+    {
+        "name": "log",
+        "desc": "Delete Variable is used to delete a single variable. This is used to reduce memory.",
+        "exampleDesc": "",
+        "usage": {
+            "type": "container",
+            "prps": {
+                "icons": [
+                    "face",
+                    "flare"
+                ],
+                "scps": [
+                    {
+                        "triggers": [
+                            {
+                                "event": "onMount"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "setVariable",
+                                "value": "{{state.self.icons}}",
+                                "name": "icons"
+                            },
+                            {
+                                "type": "deleteVariable",
+                                "name": "icons"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "propSpec": [
+            {
+                "key": "name",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The name of the variable that is to be deleted"
+            }
+        ]
+    }
+]

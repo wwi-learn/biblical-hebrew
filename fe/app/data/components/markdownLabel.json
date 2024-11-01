@@ -1,0 +1,19 @@
+[
+    {
+        "name": "markdownLabel",
+        "description": "Not provided",
+        "usage": {
+            "type": "markdownLabel",
+            "prps": {
+                "cpt": "# hello\nworld"
+            }
+        },
+        "propSpec": [
+            {
+                "name": "cpt",
+                "type": "string",
+                "desc": "The markdown string to render"
+            }
+        ]
+    }
+]

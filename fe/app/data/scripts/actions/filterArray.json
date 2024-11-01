@@ -1,0 +1,85 @@
+[
+    {
+        "name": "filterArray",
+        "desc": "This a convenience action that removes the need to use a combination of forLoop, applyComparison, and pushVariable actions in order to obtain a filtered version of an array.",
+        "exampleDesc": "In this example, the icons array is filtered to only include objects with show set to true.",
+        "usage": {
+            "type": "container",
+            "prps": {
+                "icons": [
+                    {
+                        "icon": "face",
+                        "show": false
+                    },
+                    {
+                        "icon": "phone",
+                        "show": true
+                    },
+                    {
+                        "icon": "home",
+                        "show": true
+                    }
+                ],
+                "scps": [
+                    {
+                        "triggers": [
+                            {
+                                "event": "onMount"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "id": "sF",
+                                "type": "filterArray",
+                                "value": "{{state.self.icons}}",
+                                "condition": {
+                                    "operator": "isEqual",
+                                    "value": "{{sF.variable.record.show}}",
+                                    "compareValue": true
+                                },
+                                "storeAsVariable": "icons"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "propSpec": [
+            {
+                "key": "id",
+                "dataType": "string",
+                "mandatory": false,
+                "dft": "",
+                "desc": "Defines the id for the script that morphs the condition object. While this key is not mandatory, it would be impossible to access each record variable without this accessor since the {{variable.record}} accessor would be replaced as soon as the action is run, instead of for each record in the array"
+            },
+            {
+                "key": "value",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The array that should be filtered"
+            },
+            {
+                "key": "condition",
+                "dataType": "object",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The condition that should be applied to each array entry"
+            },
+            {
+                "key": "recordVarName",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "record",
+                "desc": "The name of the variable in which each record will be placed when performing the comparison"
+            },
+            {
+                "key": "rowNumVarName",
+                "dataType": "string",
+                "mandatory": false,
+                "dft": "rowNum",
+                "desc": "The name of the variable in which the row number for each record will be placed when performing the comparison"
+            }
+        ]
+    }
+]

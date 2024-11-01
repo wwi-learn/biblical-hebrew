@@ -1,0 +1,62 @@
+[
+    {
+        "name": "mover",
+        "description": "Not provided",
+        "usage": {
+            "type": "containerSimple",
+            "prps": {
+                "singlePage": true,
+                "backgroundColor": "lightGrey"
+            },
+            "wgts": [
+                {
+                    "type": "containerMovable",
+                    "container": "root",
+                    "prps": {
+                        "zIndex": 9999,
+                        "position": "absolute",
+                        "left": "0px",
+                        "top": "0px",
+                        "width": "100vw",
+                        "height": "100vh",
+                        "overflow": "hidden"
+                    },
+                    "wgts": [
+                        {
+                            "type": "mover",
+                            "prps": {
+                                "position": "absolute",
+                                "left": "100px",
+                                "top": "100px"
+                            },
+                            "wgts": [
+                                {
+                                    "type": "label",
+                                    "prps": {
+                                        "cpt": "Drag me!",
+                                        "paddingSize": "smallPadding",
+                                        "backgroundColor": "white"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "propSpec": [
+            {
+                "name": "renderChildren",
+                "type": "boolean",
+                "desc": "When this is false, child components won't be rendered",
+                "dft": true
+            },
+            {
+                "name": "renderChildrenWhenInvis",
+                "type": "boolean",
+                "desc": "When this is false and the container is invisible (vis: false), child components won't be rendered. This property is overriden by renderChildren",
+                "dft": false
+            }
+        ]
+    }
+]

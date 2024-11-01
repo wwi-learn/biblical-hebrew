@@ -1,0 +1,72 @@
+[
+    {
+        "name": "reduceArray",
+        "desc": "This a convenience action that removes the need to use a combination of forLoop and setVariable actions with eval- expressions in order to obtain a reduced version of an array.",
+        "exampleDesc": "This action takes a list of strings and combines them into a single result with the value: ABC. Note the need to specify that the initialValue is \"\".",
+        "usage": [
+            {
+                "type": "reduceArray",
+                "value": [
+                    "A",
+                    "B",
+                    "C"
+                ],
+                "reduction": "concatenate",
+                "initialValue": "",
+                "storeAsVariable": "result"
+            },
+            {
+                "type": "reduceArray",
+                "value": [
+                    {
+                        "name": "Shaun",
+                        "moreInfo": {
+                            "age": 99
+                        }
+                    },
+                    {
+                        "name": "Santino",
+                        "moreInfo": {
+                            "age": 1
+                        }
+                    }
+                ],
+                "field": "moreInfo.age",
+                "reduction": "add",
+                "initialValue": 0,
+                "storeAsVariable": "result"
+            }
+        ],
+        "propSpec": [
+            {
+                "key": "value",
+                "dataType": "array",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The array that should be reduced"
+            },
+            {
+                "key": "reduction",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "options": "add, concatenate",
+                "desc": "The reduction that should be applied to the entries in the array"
+            },
+            {
+                "key": "field",
+                "dataType": "string",
+                "mandatory": false,
+                "dft": "",
+                "desc": "Where applicable, this defines which field inside each entry should be used. This should be of the form a.b.c.d.e if we want to access the object inside the record of the name a which has an object inside it called b, etc."
+            },
+            {
+                "key": "initialValue",
+                "dataType": "mixed",
+                "mandatory": true,
+                "dft": "",
+                "desc": "Defines what the initial value of the reduction should be. Normally, this will be set to \"\" for concatenate and 0 for add, but in certain situations, other values may be required"
+            }
+        ]
+    }
+]

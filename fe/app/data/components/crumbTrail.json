@@ -1,0 +1,55 @@
+[
+    {
+        "name": "crumbTrail",
+        "description": "Not provided",
+        "usage": {
+            "type": "crumbTrail",
+            "prps": {}
+        },
+        "propSpec": [
+            {
+                "name": "value",
+                "type": "array",
+                "dft": "() => []",
+                "desc": "A stack of dashboards that have been opened (last in first out)",
+                "setAction": "TODO(FUNCTION)",
+                "deleteAction:": "TODO(FUNCTION)"
+            },
+            {
+                "name": "captionMap",
+                "type": "object",
+                "dft": "() => ({})",
+                "spec": {
+                    "dashboardA": "Dashboard A"
+                },
+                "desc": "Contains mappings that are used to translate dashboards to captions that are displayed in the label"
+            },
+            {
+                "name": "resetList",
+                "type": "array",
+                "dft": "() => []",
+                "spec": [
+                    "dashboard1",
+                    "dashboard2"
+                ],
+                "desc": "Contains a list of dashboards that, when opened, should cause the value stack to be cleared"
+            },
+            {
+                "name": "currentDashboard",
+                "type": "string",
+                "desc": "The location of the current dashboard. This is used for flows",
+                "internal": true
+            },
+            {
+                "name": "prpsLabel",
+                "type": "object",
+                "desc": "Properties that will be set for the crumbtrail's label"
+            },
+            {
+                "name": "prpsIcon",
+                "type": "object",
+                "desc": "Properties that will be set for the crumbtrail's icon"
+            }
+        ]
+    }
+]

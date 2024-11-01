@@ -1,0 +1,62 @@
+[
+    {
+        "name": "toggleClass",
+        "desc": "This action will toggle a class (add/remove) on a given component",
+        "exampleDesc": "",
+        "usage": {
+            "type": "container",
+            "prps": {
+                "backgroundColor": "red",
+                "canClick": true,
+                "classes": "fancyDisabled",
+                "fireScript": {
+                    "actions": [
+                        {
+                            "type": "toggleClass",
+                            "className": "fancyDisabled"
+                        }
+                    ]
+                },
+                "scps": [
+                    {
+                        "actions": [
+                            {
+                                "type": "registerStylesheet",
+                                "stylesheet": {
+                                    ".fancyDisabled": {
+                                        "opacity": "0.5 !important",
+                                        "filter": "hue-rotate(100deg)"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "wgts": [
+                {
+                    "type": "label",
+                    "prps": {
+                        "cpt": "Click me"
+                    }
+                }
+            ]
+        },
+        "propSpec": [
+            {
+                "key": "msg",
+                "dataType": "string",
+                "mandatory": false,
+                "dft": "",
+                "desc": "Defines the targeted component id"
+            },
+            {
+                "key": "className",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": "Defines the class name you want to toogle"
+            }
+        ]
+    }
+]

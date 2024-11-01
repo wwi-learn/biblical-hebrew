@@ -1,0 +1,66 @@
+[
+    {
+        "name": "addClass",
+        "desc": "This action adds a class to the targeted component",
+        "exampleDesc": "In this example, we register a stylesheet with the registerStylesheet action. When we click the button it will add the custom myLabel class to the label and thus the styles set in the registerStylesheet action will be applied.",
+        "usage": {
+            "type": "containerSimple",
+            "prps": {
+                "scps": [
+                    {
+                        "actions": [
+                            {
+                                "type": "registerStylesheet",
+                                "stylesheet": {
+                                    ".myLabel": {
+                                        "color": "red"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "wgts": [
+                {
+                    "id": "l1",
+                    "type": "label",
+                    "prps": {
+                        "cpt": "I am a label"
+                    }
+                },
+                {
+                    "type": "button",
+                    "prps": {
+                        "cpt": "Click me to add the label class",
+                        "fireScript": {
+                            "actions": [
+                                {
+                                    "type": "addClass",
+                                    "target": "l1",
+                                    "className": "myLabel"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "propSpec": [
+            {
+                "key": "target",
+                "dataType": "string",
+                "mandatory": false,
+                "dft": "",
+                "desc": "(Optional) This will default to the component the script is on."
+            },
+            {
+                "key": "className",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": "Targeted class name to be added"
+            }
+        ]
+    }
+]

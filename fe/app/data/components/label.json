@@ -1,0 +1,96 @@
+[
+    {
+        "name": "label",
+        "description": "Component used to display text on the screen",
+        "usage": {
+            "type": "label",
+            "prps": {
+                "cpt": "title",
+                "color": "#ffffff"
+            }
+        },
+        "propSpec": [
+            {
+                "name": "cpt",
+                "type": "string",
+                "desc": "The caption of the label"
+            },
+            {
+                "name": "subType",
+                "type": "string",
+                "desc": "A string of classnames to be added based on mapping provided in classMaps",
+                "classMap": "v => v"
+            },
+            {
+                "name": "bold",
+                "type": "boolean",
+                "desc": "When true, the label will be bold",
+                "cssAttr": "fontWeight",
+                "cssAttrVal": "v => {if (v) return 'bold';}"
+            },
+            {
+                "name": "underline",
+                "type": "boolean",
+                "desc": "When true, the label will have an underline",
+                "cssAttr": "textDecoration",
+                "cssAttrVal": "v => {if (v) return 'underline';}"
+            },
+            {
+                "name": "italic",
+                "type": "boolean",
+                "desc": "When true the label will be italic",
+                "cssAttr": "fontStyle",
+                "cssAttrVal": "v => {if (v) return 'italic';}"
+            },
+            {
+                "name": "uppercase",
+                "type": "boolean",
+                "desc": "When true the label will be uppercase",
+                "classMap": true
+            },
+            {
+                "name": "lowercase",
+                "type": "boolean",
+                "desc": "When true the label will be lowercase",
+                "classMap": true
+            },
+            {
+                "name": "capitalize",
+                "type": "boolean",
+                "desc": "When true the label will be capitalized",
+                "classMap": true
+            },
+            {
+                "name": "hyperlink",
+                "type": "boolean",
+                "desc": "When true, the label will be a clickable hyperlink",
+                "cssAttr": "cursor",
+                "cssAttrVal": "v => {if (v) return 'pointer';}"
+            },
+            {
+                "name": "labelType",
+                "type": "string",
+                "desc": "The type of the label",
+                "options": "['h1', 'h2', 'h3', 'h4', 'h5', 'h6' ]",
+                "classMap": "v => v"
+            },
+            {
+                "name": "color",
+                "type": "string",
+                "desc": "Defines the named themed colour that the label text should be rendered in",
+                "dft": "text",
+                "cssAttr": true,
+                "cssAttrVal": "mapToColor"
+            },
+            {
+                "name": "justify",
+                "type": "string",
+                "desc": "Sets the alignment of the text inside the label",
+                "options": "['left', 'right', 'center', 'stretch']",
+                "dft": "start",
+                "cssAttr": "textAlign",
+                "cssAttrVal": "v => v === 'stretch' ? 'justify' : v"
+            }
+        ]
+    }
+]

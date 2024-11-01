@@ -1,0 +1,36 @@
+{
+	"themeConfig": {
+		"isStyleTheme": false
+	},
+	"button": {
+		"path": "button",
+		"propSpec": {
+			"color": {
+				"dft": "info"
+			},
+			"height": {
+				"dft": "30px"
+			},
+			"marginTop": {
+				"dft": "mediumPadding"
+			},
+			"roundedBorders": {
+				"dft": true
+			},
+			"borderRadius": {
+				"dft": "3px"
+			},
+			"prpsLabel": {
+				"dft": {
+					"color": "infoText"
+				}
+			}
+		}
+	},
+	"container": {
+		"path": "container"
+	},
+	"containerSimple": {
+		"path": "containerSimple"
+	}
+}

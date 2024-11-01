@@ -1,0 +1,35 @@
+[
+    {
+        "name": "setState",
+        "desc": "Every component in the platform has its aesthetics and functionality dictated by its own state. As a result, most scripts will want to manipulate state at some stage.",
+        "usage": {
+            "type": "setState",
+            "target": "myIcon",
+            "key": "color",
+            "value": "primary"
+        },
+        "propSpec": [
+            {
+                "key": "target",
+                "dataType": "string",
+                "mandatory": false,
+                "dft": "Defaults to the scipt owner's id",
+                "desc": "The id of the component you want to affect"
+            },
+            {
+                "key": "key",
+                "dataType": "string",
+                "mandatory": false,
+                "dft": "value",
+                "desc": "The key in the target component’s state you want to affect"
+            },
+            {
+                "key": "value",
+                "dataType": "mixed",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The value that the key should be set to"
+            }
+        ]
+    }
+]

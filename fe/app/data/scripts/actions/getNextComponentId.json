@@ -1,0 +1,52 @@
+[
+    {
+        "name": "getNextComponentId",
+        "desc": "Gets the id of the ‘next’ component. Here, ‘next’ refers to a component that is defined after the component that owns the script.",
+        "exampleDesc": "This is the simplest form of this action. It gets the id of the component that is defined after the component that owns the script and stores it in a variable called nextId",
+        "usage": [
+            {
+                "type": "getNextComponentId",
+                "storeAsVariable": "nextId"
+            },
+            {
+                "type": "getNextComponentId",
+                "match": {
+                    "operator": "isEqual",
+                    "key": "type",
+                    "compareValue": "input"
+                },
+                "storeAsVariable": "nextId"
+            }
+        ],
+        "propSpec": [
+            {
+                "key": "startAtId",
+                "dataType": "string",
+                "mandatory": false,
+                "dft": "",
+                "desc": "When provided, this will be used as an id to start searching at. That is, instead of looking for the component after the script owner, the component after startAtId will be used instead"
+            },
+            {
+                "key": "allowCircular",
+                "dataType": "boolean",
+                "mandatory": false,
+                "dft": "false",
+                "desc": "When set to true, the action will return the first component’s id when run from the the context of the last component"
+            },
+            {
+                "key": "parentId",
+                "dataType": "string",
+                "mandatory": false,
+                "dft": "false",
+                "desc": "When provided, instead of looking at all possible components, only components that reside inside the component with this id will be considered. Note that any component inside this component will be considered, regardless of how deeply nested a component may be"
+            },
+            {
+                "key": "match",
+                "dataType": "object",
+                "mandatory": false,
+                "dft": "false",
+                "desc": "When provided, this match will by run through an applyComparison check. Only components that pass this check will be considered as valid results. See the second example above for more information on this"
+            }
+        ]
+    }
+]

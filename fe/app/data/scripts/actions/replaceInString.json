@@ -1,0 +1,52 @@
+[
+    {
+        "name": "replaceInString",
+        "desc": "This action replaces various strings in a string with other strings",
+        "exampleDesc": "",
+        "usage": {
+            "actions": [
+                {
+                    "type": "setVariable",
+                    "name": "someString",
+                    "value": "This is a test string"
+                },
+                {
+                    "type": "replaceInString",
+                    "replacements": [
+                        {
+                            "fromString": "This is",
+                            "toString": "This is not"
+                        },
+                        {
+                            "fromString": "a test string",
+                            "toString": "a test"
+                        }
+                    ]
+                }
+            ]
+        },
+        "propSpec": [
+            {
+                "key": "replacements",
+                "dataType": "array",
+                "mandatory": true,
+                "dft": "",
+                "desc": "Array of string replacements objects"
+            },
+            {
+                "key": "fromString",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The string you are replacing"
+            },
+            {
+                "key": "toString",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The string you are replacing with"
+            }
+        ]
+    }
+]

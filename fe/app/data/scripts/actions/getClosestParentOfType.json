@@ -1,0 +1,57 @@
+[
+    {
+        "name": "getClosestParentOfType",
+        "desc": "This action will perform a recursive search to find parent components that have or do not have a certain type.",
+        "exampleDesc": "",
+        "usage": [
+            {
+                "type": "getClosestParentOfType",
+                "target": "((state.self.id))",
+                "componentType": [
+                    "containerMovable",
+                    "containerDnd"
+                ],
+                "storeAsVariable": "parentId"
+            },
+            {
+                "type": "getClosestParentOfType",
+                "target": "((state.self.id))",
+                "notComponentType": [
+                    "container",
+                    "containerSimple"
+                ],
+                "storeAsVariable": "parentId"
+            }
+        ],
+        "propSpec": [
+            {
+                "key": "target",
+                "dataType": "",
+                "mandatory": true,
+                "dft": "",
+                "desc": "id of the child component"
+            },
+            {
+                "key": "componentType",
+                "dataType": "array",
+                "mandatory": true,
+                "dft": "",
+                "desc": "Component types to match"
+            },
+            {
+                "key": "notCompomentType",
+                "dataType": "array",
+                "mandatory": false,
+                "dft": "",
+                "desc": "Component types to not match"
+            },
+            {
+                "key": "storeAsVariable",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": "Stores the result of the action"
+            }
+        ]
+    }
+]

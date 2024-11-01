@@ -1,0 +1,20 @@
+[
+    {
+        "name": "removeClass",
+        "desc": "This action removes a class from the targeted component",
+        "exampleDesc": "In this example, we register a stylesheet with the registerStylesheet action. When we click the button it will remove the custom myLabel class from the label and thus the styles set in the registerStylesheet action",
+        "usage": {
+            "type": "log",
+            "msg": "The value of the input is currently ((state.inputUsername.value))"
+        },
+        "propSpec": [
+            {
+                "key": "msg",
+                "dataType": "mixed",
+                "mandatory": true,
+                "dft": "",
+                "desc": "Message that you wish to disolay in the console"
+            }
+        ]
+    }
+]

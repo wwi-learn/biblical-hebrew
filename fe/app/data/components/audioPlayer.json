@@ -1,0 +1,49 @@
+[
+    {
+        "name": "audioPlayer",
+        "description": "component that allows users play audio files.",
+        "usage": {
+            "type": "audioPlayer",
+            "prps": {
+                "value": "https://file-examples.com/storage/fe63e96e0365c0e1e99a842/2017/11/file_example_MP3_1MG.mp3",
+                "width": "500px",
+                "autoPlay": true,
+                "controls": "true"
+            }
+        },
+        "propSpec": [
+            {
+                "name": "value",
+                "type": "string",
+                "desc": "The source where to get the audio from"
+            },
+            {
+                "name": "width",
+                "type": "string",
+                "desc": "The width of the audio player"
+            },
+            {
+                "name": "height",
+                "type": "string",
+                "desc": "The height of the audio player"
+            },
+            {
+                "name": "hasLabel",
+                "type": "boolean",
+                "desc": "When true, the audio player will have a label"
+            },
+            {
+                "name": "controls",
+                "type": "boolean",
+                "desc": "When true, the audio player will have controls",
+                "dft": true
+            },
+            {
+                "name": "autoPlay",
+                "type": "boolean",
+                "desc": "When true, the audio player will auto play",
+                "dft": true
+            }
+        ]
+    }
+]

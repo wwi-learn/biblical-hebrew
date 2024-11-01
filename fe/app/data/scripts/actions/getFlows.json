@@ -1,0 +1,44 @@
+[
+    {
+        "name": "getFlows",
+        "desc": "Sometimes, it’s useful to see the value of a certain state/variable while executing a script for debug purposes. Using the log action, we can send output to the browser’s console",
+        "exampleDesc": "",
+        "usage": {
+            "type": "getFlows",
+            "target": "{{state.self.id}}",
+            "includeFrom": true,
+            "includeTo": true,
+            "storeAsVariable": "flows"
+        },
+        "propSpec": [
+            {
+                "key": "target",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": ""
+            },
+            {
+                "key": "includeFrom",
+                "dataType": "boolean",
+                "mandatory": true,
+                "dft": "",
+                "desc": ""
+            },
+            {
+                "key": "includeTo",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": ""
+            },
+            {
+                "key": "storeAsVariable",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": ""
+            }
+        ]
+    }
+]

@@ -1,0 +1,76 @@
+[
+    {
+        "name": "icon",
+        "description": "component used to display icons on the page",
+        "usage": [
+            {
+                "type": "icon",
+                "prps": {
+                    "value": "face",
+                    "color": "red"
+                }
+            }
+        ],
+        "propSpec": [
+            {
+                "name": "value",
+                "type": "string",
+                "desc": "A string defining the name of the material icon to be displayed"
+            },
+            {
+                "name": "handlerOnClick",
+                "type": "function",
+                "desc": "A handler function to be executed upon clicking the icon"
+            },
+            {
+                "name": "title",
+                "type": "string",
+                "desc": "A title tooltip to be shown when hovering over the icon"
+            },
+            {
+                "name": "color",
+                "type": "string",
+                "desc": "A string defining the color of the icon",
+                "dft": "icon",
+                "cssAttr": "color",
+                "cssAttrVal": "mapToColor"
+            },
+            {
+                "name": "padding",
+                "type": "boolean",
+                "desc": "When true, padding will surround the icon",
+                "cssAttr": "padding",
+                "cssAttrVal": "(v, state, spec, themes) => { if (v) return mapToSize('smallPadding', state, spec, themes); }"
+            },
+            {
+                "name": "roundedBorders",
+                "type": "boolean",
+                "desc": "When true, the icon will have rounded borders",
+                "cssAttr": "border-radius",
+                "cssAttrVal": "(v, state, spec, themes) => { if (!v || state.borderRadius) return; return mapToSize('border-radius', state, spec, themes); }"
+            },
+            {
+                "name": "hasBadge",
+                "type": "boolean",
+                "desc": "When true, the icon will display a badge",
+                "dft": false
+            },
+            {
+                "name": "badgeValue",
+                "type": "string",
+                "desc": "The value displayed inside the icon's badge"
+            },
+            {
+                "name": "fontSize",
+                "inherited": true,
+                "dft": "fontSizeBiggest"
+            },
+            {
+                "name": "iconStyle",
+                "desc": "The style of icon to render",
+                "options": "[\"filled\", \"outlined\", \"rounded\", \"sharp\", \"twoTone\"]",
+                "dft": "filled"
+            }
+        ]
+    }
+]

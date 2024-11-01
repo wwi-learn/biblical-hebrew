@@ -1,0 +1,28 @@
+[
+    {
+        "name": "getComponentHeight",
+        "desc": " This action is used to get the height of a component.",
+        "exampleDesc": "",
+        "usage": {
+            "type": "getComponentHeight",
+            "target": "tallComponent",
+            "storeAsVariable": ""
+        },
+        "propSpec": [
+            {
+                "key": "target",
+                "dataType": "string",
+                "mandatory": false,
+                "dft": "script owner’s id",
+                "desc": "The component’s whose height you need to know"
+            },
+            {
+                "key": "getScrollHeight",
+                "dataType": "boolean",
+                "mandatory": false,
+                "dft": "false",
+                "desc": "If getScrollHeight is true, you will get the height of the  component including any of the component that is hidden due to overflow. If getScrollHeight is false, you will get the clientHeight which is the visible height of the component."
+            }
+        ]
+    }
+]

@@ -1,0 +1,34 @@
+[
+    {
+        "name": "spinner",
+        "description": "Not provided",
+        "usage": {
+            "type": "spinner",
+            "prps": {
+                "loading": true
+            }
+        },
+        "propSpec": [
+            {
+                "name": "min",
+                "type": "decimal",
+                "desc": "A decimal defining the minimum value that can be plotted"
+            },
+            {
+                "name": "max",
+                "type": "decimal",
+                "desc": "A decimal defining the maximum value that can be plotted"
+            },
+            {
+                "name": "value",
+                "type": "decimal",
+                "desc": "A value to be displayed that, when passed, will set the spinner as determinate, and progress will be indicated"
+            },
+            {
+                "name": "loading",
+                "type": "boolean",
+                "desc": "When true, the loading spinner will show"
+            }
+        ]
+    }
+]

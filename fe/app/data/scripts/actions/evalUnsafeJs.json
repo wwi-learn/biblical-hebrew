@@ -1,0 +1,56 @@
+[
+    {
+        "name": "evalUnsafeJs",
+        "desc": " Rarely, it can be necessary to run javascript code directly in an application. Note that this should be avoided as far as possible.",
+        "exampleDesc": "In this example, we’re running two pieces of javascript when the container mounts. the first one sets the value of input i1 inside a promise. Note that the promise completes at the end (through calling r()) In this case, the action will only complete once the promise has resolved. In the second action, there is no promise and the value of input i2 is simply set.",
+        "usage": {
+            "type": "containerSimple",
+            "prps": {
+                "scps": [
+                    {
+                        "triggers": [
+                            {
+                                "event": "onMount"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "evalUnsafeJs",
+                                "value": "new Promise(r => { document.querySelector('#i1 input').value = 'It works!'; r(); })"
+                            },
+                            {
+                                "type": "evalUnsafeJs",
+                                "value": "document.querySelector('#i2 input').value = 'It works!';"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "wgts": [
+                {
+                    "id": "i1",
+                    "type": "input",
+                    "prps": {
+                        "value": "..."
+                    }
+                },
+                {
+                    "id": "i2",
+                    "type": "input",
+                    "prps": {
+                        "value": "..."
+                    }
+                }
+            ]
+        },
+        "propSpec": [
+            {
+                "key": "value",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": "A string that should be executed as javascript code inside the browser."
+            }
+        ]
+    }
+]

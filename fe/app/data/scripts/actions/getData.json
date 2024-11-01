@@ -1,0 +1,76 @@
+[
+    {
+        "name": "getData",
+        "desc": "used to trigger a queryGateway within a script. id is used to define the component the returned data will be sent to.",
+        "exampleDesc": "",
+        "usage": {
+            "id": "test",
+            "type": "container",
+            "prps": {
+                "scps": [
+                    {
+                        "triggers": [
+                            {
+                                "event": "onMount"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "id": "test",
+                                "type": "getData",
+                                "offset": 0,
+                                "pageSize": 500,
+                                "dtaObj": "UserFunction",
+                                "storeAsVariable": "storedUserFunctions",
+                                "^filters": [
+                                    {
+                                        "key": "UserCode",
+                                        "operator": "equals",
+                                        "value": "{{variable.user_code}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "propSpec": [
+            {
+                "key": "id",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": "defined the component the data will be sent to"
+            },
+            {
+                "key": "offset",
+                "dataType": "integer",
+                "mandatory": false,
+                "dft": "",
+                "desc": "the row number of the first record to be returned"
+            },
+            {
+                "key": "pageSize",
+                "dataType": "integer",
+                "mandatory": false,
+                "dft": "",
+                "desc": "the maximum number of records to return"
+            },
+            {
+                "key": "dtaObj",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": "the name of the data object being Queried"
+            },
+            {
+                "key": "filters",
+                "dataType": "array",
+                "mandatory": true,
+                "dft": "",
+                "desc": "filters to be applied to the query"
+            }
+        ]
+    }
+]

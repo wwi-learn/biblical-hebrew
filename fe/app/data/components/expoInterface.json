@@ -1,0 +1,34 @@
+[
+    {
+        "name": "expoInterface",
+        "description": "Not provided",
+        "usage": {
+            "type": "expoInterface",
+            "prps": {}
+        },
+        "propSpec": [
+            {
+                "name": "msgToExpo",
+                "type": "object",
+                "desc": "Setting this state value, causes an event to be fired in the expo wrapper",
+                "dft": "() => []",
+                "spec": {
+                    "event": "string",
+                    "value": "string"
+                },
+                "setAction": "TODO(FUNCTION)"
+            },
+            {
+                "name": "eventFlows",
+                "type": "object",
+                "desc": "A list of events to listen to from expo and where the values should be flowed. Each key-value pair defines an event name and a flow for that event.",
+                "spec": {
+                    "eventNameA": {
+                        "to": "toId",
+                        "toKey": "toKey"
+                    }
+                }
+            }
+        ]
+    }
+]

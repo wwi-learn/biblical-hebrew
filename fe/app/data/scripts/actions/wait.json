@@ -1,0 +1,20 @@
+[
+    {
+        "name": "wait",
+        "desc": " The action causes the current script to wait for a specified amount of milliseconds before running the next action.",
+        "exampleDesc": "",
+        "usage": {
+            "type": "wait",
+            "duration": 3000
+        },
+        "propSpec": [
+            {
+                "key": "duration",
+                "dataType": "number",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The duration of the wait action in milliseconds"
+            }
+        ]
+    }
+]

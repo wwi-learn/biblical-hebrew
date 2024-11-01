@@ -1,0 +1,75 @@
+[
+    {
+        "name": "resolveScopedId",
+        "desc": "This action can be used to get the id’s of all components that match a certain scoped id",
+        "exampleDesc": "",
+        "usage": {
+            "type": "containerSimple",
+            "prps": {
+                "singlePage": true,
+                "mainAxisAlign": "center",
+                "crossAxisAlign": "center"
+            },
+            "wgts": [
+                {
+                    "scope": "i1",
+                    "type": "input",
+                    "prps": {
+                        "value": "abc"
+                    }
+                },
+                {
+                    "scope": "i1",
+                    "type": "input",
+                    "prps": {
+                        "value": "def"
+                    }
+                },
+                {
+                    "type": "button",
+                    "prps": {
+                        "cpt": "Click me",
+                        "fireScript": {
+                            "actions": [
+                                {
+                                    "type": "resolveScopedId",
+                                    "scopedId": "i1",
+                                    "storeAsVariable": "res"
+                                },
+                                {
+                                    "type": "setState",
+                                    "target": "l1",
+                                    "key": "cpt",
+                                    "value": "{{eval.JSON.stringify({{variable.res}})}}"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "id": "l1",
+                    "type": "label",
+                    "prps": {
+                        "cpt": "..."
+                    }
+                }
+            ]
+        },
+        "propSpec": [
+            {
+                "key": "scopedId",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The scoped id to resolve. This should be written as \"scope.relId\" or \"scope\". This should not be written as \"||scope.relId||\" or \"||scope||\""
+            },
+            {
+                "key": "anchorId",
+                "dataType": "string",
+                "mandatory": false,
+                "dft": "id of script owner",
+                "desc": "The id of the component that should act as the scoped id lookup anchor point"
+            }
+        ]
+    }
+]

@@ -1,0 +1,51 @@
+[
+    {
+        "name": "loadExternalJs",
+        "desc": " This action can be used to embed an external script into the application.",
+        "exampleDesc": "This example will embed the following into the document’s head: <script src=\"http://path/to/script.js\" a b=\"value\"></script>\"",
+        "usage": {
+            "type": "containerSimple",
+            "prps": {
+                "scps": [
+                    {
+                        "triggers": [
+                            {
+                                "event": "onMount"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "loadExternalJs",
+                                "src": "http://path/to/script.js",
+                                "attributes": {
+                                    "a": "",
+                                    "b": "value"
+                                }
+                            },
+                            {
+                                "type": "log",
+                                "msg": "The script is done loading now"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "propSpec": [
+            {
+                "key": "src",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The location of the script to be embedded"
+            },
+            {
+                "key": "attributes",
+                "dataType": "object",
+                "mandatory": true,
+                "dft": "",
+                "desc": "An object containing extra attributes to be set on the script tag"
+            }
+        ]
+    }
+]

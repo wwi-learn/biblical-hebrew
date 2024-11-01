@@ -1,0 +1,74 @@
+[
+    {
+        "name": "log",
+        "desc": "",
+        "exampleDesc": "In this example, the userDetails state is put inside a variable. After that, the name and country is changed and the modified object is placed back into state.",
+        "usage": {
+            "type": "containerSimple",
+            "prps": {
+                "userDetails": {
+                    "name": "Shaun",
+                    "location": {
+                        "country": "South Africa"
+                    }
+                },
+                "scps": [
+                    {
+                        "triggers": [
+                            {
+                                "event": "onMount"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "setVariable",
+                                "name": "userDetails",
+                                "value": "{{state.self.userDetails}}"
+                            },
+                            {
+                                "type": "setVariableKey",
+                                "name": "userDetails",
+                                "key": "name",
+                                "value": "Santino"
+                            },
+                            {
+                                "type": "setVariableKey",
+                                "name": "userDetails",
+                                "key": "location.country",
+                                "value": "England"
+                            },
+                            {
+                                "type": "setState",
+                                "key": "userDetails",
+                                "value": "{{variable.userDetails}}"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "propSpec": [
+            {
+                "key": "name",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The name of the variable to be modified"
+            },
+            {
+                "key": "key",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": "A string containing the name of the key (or list of keys, separated by .) to be set"
+            },
+            {
+                "key": "value",
+                "dataType": "mixed",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The value to which the variable key should be set toe"
+            }
+        ]
+    }
+]

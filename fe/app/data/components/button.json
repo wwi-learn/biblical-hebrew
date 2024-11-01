@@ -1,0 +1,122 @@
+[
+    {
+        "name": "button",
+        "description": "component used for onClick functionality",
+        "usage": {
+            "type": "button",
+            "prps": {
+                "cpt": "Click Me",
+                "color": "red",
+                "round": true
+            }
+        },
+        "propSpec": [
+            {
+                "name": "round",
+                "type": "boolean",
+                "desc": "When true, buttons will be round",
+                "dft": false,
+                "classMap": true
+            },
+            {
+                "name": "color",
+                "type": "string",
+                "desc": "The name of the theme colour to use as the button background",
+                "dft": "transparent",
+                "cssAttr": "backgroundColor",
+                "cssAttrVal": "mapToColor"
+            },
+            {
+                "name": "clicked",
+                "type": "boolean",
+                "desc": "When true, the button was clicked",
+                "internal": true
+            },
+            {
+                "name": "fireScript",
+                "type": "object",
+                "desc": "A script to be passed to scriptRunner on click"
+            },
+            {
+                "name": "handlerOnClick",
+                "type": "function",
+                "desc": "A handler function to be executed on click"
+            },
+            {
+                "name": "open",
+                "type": "string",
+                "desc": "A string specifying which popup to show on click"
+            },
+            {
+                "name": "round",
+                "type": "string",
+                "desc": "A string specifying which popup to close on click"
+            },
+            {
+                "name": "lookup",
+                "type": "object",
+                "desc": "Data that should be entered into the modal if open has a value"
+            },
+            {
+                "name": "hasBorder",
+                "type": "boolean",
+                "desc": "When true, the button will have a border",
+                "classMap": true,
+                "dft": false
+            },
+            {
+                "name": "shadow:",
+                "type": "boolean",
+                "desc": "When true, the the button will have a shadow",
+                "classMap": true,
+                "dft": false
+            },
+            {
+                "name": "dir",
+                "type": "string",
+                "options": "['horizontal', 'horizontal-reverse', 'vertical', 'vertical-reverse' ]",
+                "dft": "horizontal",
+                "desc": "The flex direction of the button's inner icon, caption and badge",
+                "classMap": "v => v"
+            },
+            {
+                "name": "hasBadge",
+                "type": "boolean",
+                "desc": "When true, the button will display a badge",
+                "dft": false,
+                "classMap": true
+            },
+            {
+                "name": "badgeValue",
+                "type": "string",
+                "desc": "The value displayed inside the button's badge"
+            },
+            {
+                "name": "roundedBorders",
+                "type": "boolean",
+                "desc": "When true, the button will have rounded borders",
+                "dft": false,
+                "cssAttr": "borderRadius",
+                "cssAttrVal": "(v, state, spec, themes) => { if (!v || state.borderRadius) return; return mapToSize('border-radius', state, spec, themes); } }"
+            },
+            {
+                "name": "prpsLabel",
+                "type": "object",
+                "desc": "Override properties for the label that's rendered for the button's caption"
+            },
+            {
+                "name": "prpsIcon:",
+                "type": "object",
+                "desc": "Override properties for the icon that's rendered for the button's icon"
+            },
+            {
+                "name": "paddingSize",
+                "type": "string",
+                "desc": "Padding to be applied to the element",
+                "dft": "smallPadding",
+                "cssAttr": "padding",
+                "cssAttrVal": "(v, state, spec, themes) => {if (state.padding)return mapToSize(v, state, spec, themes);}"
+            }
+        ]
+    }
+]

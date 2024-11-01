@@ -1,0 +1,37 @@
+[
+    {
+        "name": "dataLoader",
+        "description": "Not provided",
+        "usage": {
+            "type": "dataLoader",
+            "prps": {
+                "processedData": [],
+                "needsNewData": true
+            }
+        },
+        "propSpec": [
+            {
+                "name": "overrideFilters",
+                "type": "array",
+                "desc": "A list of filter overrides"
+            },
+            {
+                "name": "processedData",
+                "type": "array",
+                "desc": "Data that has already been processed",
+                "internal": true
+            },
+            {
+                "name": "needsNewData",
+                "type": "boolean",
+                "desc": "When true, a new data request will be performed"
+            },
+            {
+                "name": "deltaKeys",
+                "type": "array",
+                "desc": "A list of delta keys that, when changed, reloads the dataLoader component",
+                "internal": true
+            }
+        ]
+    }
+]

@@ -1,0 +1,34 @@
+[
+    {
+        "name": "lineDragger",
+        "description": "Not provided",
+        "usage": {
+            "type": "lineDragger",
+            "prps": {
+                "renderChildren": true,
+                "renderChildrenWhenInvis": true,
+                "renderTargetSelector": "root"
+            }
+        },
+        "propSpec": [
+            {
+                "name": "renderChildren",
+                "type": "boolean",
+                "desc": "When this is false, child components won't be rendered",
+                "dft": true
+            },
+            {
+                "name": "renderChildrenWhenInvis",
+                "type": "boolean",
+                "desc": "When this is false and the container is invisible (vis: false), child components won't be rendered. This property is overriden by renderChildren",
+                "dft": false
+            },
+            {
+                "name": "renderTargetSelector",
+                "type": "string",
+                "desc": "A DOM selector which will resolve to the element in which to draw the lines",
+                "dft": "root"
+            }
+        ]
+    }
+]

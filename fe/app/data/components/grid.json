@@ -1,0 +1,179 @@
+[
+    {
+        "name": "grid",
+        "description": "When you have a list of data that you wish to represent in a row/column format.",
+        "usage": {
+            "type": "grid",
+            "prps": {
+                "staticData": [
+                    {
+                        "name": "Shaun",
+                        "age": 35
+                    },
+                    {
+                        "name": "Alexis",
+                        "age": 4
+                    }
+                ]
+            },
+            "wgts": [
+                {
+                    "id": "name",
+                    "tsl": {
+                        "cpt": "Name"
+                    }
+                },
+                {
+                    "id": "age",
+                    "tsl": {
+                        "cpt": "Age"
+                    }
+                }
+            ]
+        },
+        "propSpec": [
+            {
+                "name": "fillHeight",
+                "type": "boolean",
+                "desc": "When true, the grid will use all the available height",
+                "classMap": true
+            },
+            {
+                "name": "noBg",
+                "type": "boolean",
+                "desc": "When true, the grid's background will be removed",
+                "dft": false,
+                "classMap": true
+            },
+            {
+                "name": "canDeselect",
+                "type": "boolean",
+                "desc": "When false, rows cannot be de-selected",
+                "dft": true
+            },
+            {
+                "name": "colorCellText",
+                "type": "string",
+                "desc": "The color of each grid cell's text",
+                "dft": "primary",
+                "cssVar": "color-cell-text",
+                "cssVarVal": "mapToColor"
+            },
+            {
+                "name": "colorHeaderCellText",
+                "type": "string",
+                "desc": "The color of each grid header cell's text",
+                "dft": "primary",
+                "cssVar": "color-header-cell-text",
+                "cssVarVal": "mapToColor"
+            },
+            {
+                "name": "colorHeaderCellBorder",
+                "type": "string",
+                "desc": "The color of each grid header cell's text",
+                "dft": "primary",
+                "cssVar": "color-header-cell-border",
+                "cssVarVal": "mapToColor"
+            },
+            {
+                "name": "colorRowDivider",
+                "type": "string",
+                "desc": "The color of each grid cell's top border",
+                "dft": "primary",
+                "cssVar": "color-row-divider",
+                "cssVarVal": "mapToColor"
+            },
+            {
+                "name": "colorRowSelectedBg",
+                "type": "string",
+                "desc": "The background color of the selected row",
+                "dft": "primary",
+                "cssVar": "color-row-selected-bg",
+                "cssVarVal": "mapToColor"
+            },
+            {
+                "name": "colorRowBg",
+                "type": "string",
+                "desc": "The background color the row",
+                "dft": "transparent",
+                "cssVar": "color-row-bg",
+                "cssVarVal": "mapToColor"
+            },
+            {
+                "name": "colorCellTextSelected",
+                "type": "string",
+                "desc": "The color of the cell text when the row is selected",
+                "dft": "primary",
+                "cssVar": "color-cell-text-selected",
+                "cssVarVal": "mapToColor"
+            },
+            {
+                "type": "colorRowHoverBg",
+                "desc": "The background color of the selected row",
+                "dft": "primary",
+                "cssVar": "color-row-hover-bg",
+                "cssVarVal": "mapToColor"
+            },
+            {
+                "name": "colorCellTextHover",
+                "type": "string",
+                "desc": "The color of the cell text when the row is hovered",
+                "dft": "primary",
+                "cssVar": "color-cell-text-hover",
+                "cssVarVal": "mapToColor"
+            },
+            {
+                "name": "colorChipBorder",
+                "type": "string",
+                "desc": "The border color of action bar chips",
+                "dft": "primary",
+                "cssVar": "color-chip-border",
+                "cssVarVal": "mapToColor"
+            },
+            {
+                "name": "colorChipText",
+                "type": "string",
+                "desc": "The text color of action bar chips",
+                "dft": "primary",
+                "cssVar": "color-chip-text",
+                "cssVarVal": "mapToColor"
+            },
+            {
+                "name": "noRecordsMsg",
+                "type": "string",
+                "msg": "The message that displays in the grid when a result-set contains no records",
+                "dft": "No records returned"
+            },
+            {
+                "name": "headerCellFontSize",
+                "type": "string",
+                "msg": "The header cell font size",
+                "dft": "fontSizeBig",
+                "cssVar": "header-cell-font-size",
+                "cssVarVal": "mapToSize"
+            },
+            {
+                "name": "cellFontSize",
+                "type": "string",
+                "msg": "The cell font size",
+                "dft": "fontSize",
+                "cssVar": "cell-font-size",
+                "cssVarVal": "mapToSize"
+            },
+            {
+                "name": "headerRowHeight",
+                "type": "string",
+                "msg": "The height of the header row",
+                "cssVar": "header-row-height",
+                "cssVarVal": "mapToSize"
+            },
+            {
+                "name": "rowHeight",
+                "type": "string",
+                "msg": "The height of each row",
+                "cssVar": "row-height",
+                "cssVarVal": "mapToSize"
+            }
+        ]
+    }
+]

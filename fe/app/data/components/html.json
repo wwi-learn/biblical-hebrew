@@ -1,0 +1,19 @@
+[
+    {
+        "name": "html",
+        "description": "Component for displaying html",
+        "usage": {
+            "type": "html",
+            "prps": {
+                "tpl": "<div class=\"text\"><h2>Heading Here</h2><p>A bit of your text goes here.</p></div>"
+            }
+        },
+        "propSpec": [
+            {
+                "name": "tpl",
+                "type": "string",
+                "desc": "The string to display as HTML"
+            }
+        ]
+    }
+]

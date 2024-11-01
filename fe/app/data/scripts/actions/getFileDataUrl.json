@@ -1,0 +1,43 @@
+[
+    {
+        "name": "getFileDataUrl",
+        "desc": "This action receives as target the id of an input component (with dataType file) and returns a base64 representation of the file contents",
+        "exampleDesc": "",
+        "usage": {
+            "type": "input",
+            "prps": {
+                "dataType": "file",
+                "prps": {
+                    "scps": [
+                        {
+                            "triggers": [
+                                {
+                                    "event": "onStateChange"
+                                }
+                            ],
+                            "actions": [
+                                {
+                                    "type": "getFileDataUrl",
+                                    "storeAsVariable": "fileData"
+                                },
+                                {
+                                    "type": "log",
+                                    "msg": "((variable.fileData))"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "propSpec": [
+            {
+                "key": "target",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The component where you want the base64 value to be set. (Usually it would be an image components value) essage that you wish to disolay in the console"
+            }
+        ]
+    }
+]

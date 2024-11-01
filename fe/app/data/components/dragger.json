@@ -1,0 +1,27 @@
+[
+    {
+        "name": "dragger",
+        "description": "not provided.",
+        "usage": {
+            "type": "dragger",
+            "prps": {
+                "renderChildren": true,
+                "renderChildrenWhenInvis": true
+            }
+        },
+        "propSpec": [
+            {
+                "name": "renderChildren",
+                "type": "boolean",
+                "desc": "When this is false, child components won't be rendered",
+                "dft": true
+            },
+            {
+                "name": "renderChildrenWhenInvis",
+                "type": "boolean",
+                "desc": "When this is false and the container is invisible (vis: false), child components won't be rendered. This property is overriden by renderChildren",
+                "dft": false
+            }
+        ]
+    }
+]

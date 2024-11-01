@@ -1,0 +1,102 @@
+[
+    {
+        "name": "slider",
+        "description": "Not provided",
+        "usage": {
+            "type": "slider",
+            "prps": {
+                "value": "range",
+                "min": 0,
+                "max": 150,
+                "tooltipPosition": "bottom",
+                "colorTrack": "red",
+                "colorHandle": "green",
+                "colorRail": "red"
+            }
+        },
+        "propSpec": [
+            {
+                "name": "vertical",
+                "type": "boolean",
+                "desc": "When true, the slider will be vertically positioned",
+                "dft": false
+            },
+            {
+                "name": "min",
+                "type": "number",
+                "desc": "A number defining the minimum value for the slider",
+                "dft": 0
+            },
+            {
+                "name": "max",
+                "type": "number",
+                "desc": "A number defining the maximum value for the slider",
+                "dft": 100
+            },
+            {
+                "name": "value",
+                "type": "string",
+                "desc": "The current value of the slider"
+            },
+            {
+                "name": "hasLabel",
+                "type": "boolean",
+                "desc": "When true, the slider will have a label"
+            },
+            {
+                "name": "handlerOnChange",
+                "type": "function",
+                "desc": "A handler function to be executed on value change"
+            },
+            {
+                "name": "isDiscrete",
+                "type": "boolean",
+                "desc": "When true, the slider will render with discrete values",
+                "dft": false
+            },
+            {
+                "name": "interval",
+                "type": "integer",
+                "desc": "A number defining the value to be added or subtracted on each step the slider makes",
+                "dft": 1
+            },
+            {
+                "name": "hasTooltip",
+                "type": "boolean",
+                "desc": "When true, a tooltip will be shown when dragging the handle",
+                "dft": false
+            },
+            {
+                "name": "tooltipPosition",
+                "type": "string",
+                "desc": "A string that defines the position of the tooltip",
+                "options": [
+                    "top",
+                    "bottom"
+                ],
+                "dft": "({ hasTooltip }) => {if (hasTooltip) return 'top';}"
+            },
+            {
+                "name": "colorRail",
+                "type": "string",
+                "desc": "A string that defines the color of the slider rail",
+                "cssVar": "color-rail",
+                "cssVarVal": "mapToColor"
+            },
+            {
+                "name": "colorHandle",
+                "type": "string",
+                "desc": "A string that defines the color of the slider handle",
+                "cssVar": "color-handle",
+                "cssVarVal": "mapToColor"
+            },
+            {
+                "name": "colorTrack",
+                "type": "string",
+                "desc": "A string that defines the color of the slider track",
+                "cssVar": "color-track",
+                "cssVarVal": "mapToColor"
+            }
+        ]
+    }
+]

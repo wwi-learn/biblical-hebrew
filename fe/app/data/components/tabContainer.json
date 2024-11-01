@@ -1,0 +1,53 @@
+[
+    {
+        "name": "tabContainer",
+        "description": "Not provided",
+        "usage": {
+            "type": "tabContainer",
+            "prps": {
+                "active": true,
+                "activeTab": "tab_3",
+                "hideSingle": false,
+                "hasCloseOption": true
+            }
+        },
+        "propSpec": [
+            {
+                "name": "active",
+                "type": "boolean",
+                "desc": "Indicates that a tab is currently active and its contents can be viewed"
+            },
+            {
+                "name": "activeTab",
+                "type": "string",
+                "desc": "The ID of the active tab",
+                "internal": true
+            },
+            {
+                "name": "hideSingle",
+                "type": "boolean",
+                "desc": "When true, the tab container will hide tab buttons when there is only one tab"
+            },
+            {
+                "name": "handlerOnCloseTab",
+                "type": "function",
+                "desc": "The handler function to be executed when the tab is closed"
+            },
+            {
+                "name": "hasCloseOption",
+                "type": "boolean",
+                "desc": "When true, the user can close the tab"
+            },
+            {
+                "name": "prpsTabButton",
+                "type": "object",
+                "desc": "Override properties for the buttons that are rendered for both inactive and active tabs"
+            },
+            {
+                "name": "prpsTabButtonActive",
+                "type": "object",
+                "desc": "Override properties for the buttons that are rendered for the active tab"
+            }
+        ]
+    }
+]

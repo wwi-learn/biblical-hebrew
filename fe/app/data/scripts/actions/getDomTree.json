@@ -1,0 +1,20 @@
+[
+    {
+        "name": "getDomTree",
+        "desc": "This action will return a nested data structure that represents the entire dom or a subset thereof",
+        "exampleDesc": "If you have a simple dashboard with a script like this:",
+        "usage": {
+            "type": "log",
+            "msg": "The value of the input is currently ((state.inputUsername.value))"
+        },
+        "propSpec": [
+            {
+                "key": "msg",
+                "dataType": "mixed",
+                "mandatory": true,
+                "dft": "",
+                "desc": "Message that you wish to disolay in the console"
+            }
+        ]
+    }
+]

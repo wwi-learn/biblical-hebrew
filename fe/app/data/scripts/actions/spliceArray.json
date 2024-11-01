@@ -1,0 +1,50 @@
+[
+    {
+        "name": "spliceArray",
+        "desc": "This action allows you to add or remove values from an array without having to loop through the array’s contents.",
+        "exampleDesc": "This action takes a source array, value and inserts insertValue at the specified index. The value in result will be [1,2,3,4,5,6] after this action is run.",
+        "usage": {
+            "type": "spliceArray",
+            "value": [
+                1,
+                2,
+                4,
+                5,
+                6
+            ],
+            "insertValue": 3,
+            "index": 2,
+            "storeAsVariable": "result"
+        },
+        "propSpec": [
+            {
+                "key": "value",
+                "dataType": "array",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The array that should be spliced"
+            },
+            {
+                "key": "index",
+                "dataType": "number",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The index at which to splice the array"
+            },
+            {
+                "key": "insertValue",
+                "dataType": "mixed",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The value to be added at the specified index"
+            },
+            {
+                "key": "removeCount",
+                "dataType": "number",
+                "mandatory": true,
+                "dft": "0",
+                "desc": "The number of values to be removed at the specified index"
+            }
+        ]
+    }
+]

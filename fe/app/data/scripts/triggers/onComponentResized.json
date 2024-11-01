@@ -1,0 +1,20 @@
+[
+    {
+        "name": "onComponentResized",
+        "desc": "Fires when a source component is resized. either due to the component itself changing its size or a browser resize",
+        "exampleDesc": "",
+        "usage": {
+            "event": "onBlur",
+            "source": "inputUsername"
+        },
+        "propSpec": [
+            {
+                "key": "source",
+                "dataType": "string",
+                "mandatory": false,
+                "dft": "script owner id",
+                "desc": "The id of the component we want to listen to resize changes on"
+            }
+        ]
+    }
+]

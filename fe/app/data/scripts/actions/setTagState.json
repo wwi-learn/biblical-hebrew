@@ -1,0 +1,69 @@
+[
+    {
+        "name": "setTagState",
+        "desc": "Like setState, this action allows you to modify the state of another component. Unlike setState however, this action can modify the states of multiple components. That is, any component that has a specific tag attached to it",
+        "exampleDesc": "",
+        "usage": {
+            "type": "containerSimple",
+            "prps": {},
+            "wgts": [
+                {
+                    "type": "label",
+                    "prps": {
+                        "tags": [
+                            "label"
+                        ],
+                        "cpt": "Click the button to change me"
+                    }
+                },
+                {
+                    "type": "label",
+                    "prps": {
+                        "tags": [
+                            "label"
+                        ],
+                        "cpt": "Click the button to change me"
+                    }
+                },
+                {
+                    "type": "button",
+                    "prps": {
+                        "cpt": "Click me",
+                        "fireScripts": {
+                            "actions": [
+                                {
+                                    "type": "setTagState",
+                                    "target": "label",
+                                    "value": "New caption"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "propSpec": [
+            {
+                "key": "target",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The name of the tag that the target component should have"
+            },
+            {
+                "key": "key",
+                "dataType": "string",
+                "mandatory": false,
+                "dft": "value",
+                "desc": "The key in the target component’s state you want to affect"
+            },
+            {
+                "key": "value",
+                "dataType": "mixed",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The value that the key should be set to"
+            }
+        ]
+    }
+]

@@ -1,0 +1,67 @@
+[
+    {
+        "name": "deleteVariableKey",
+        "desc": "deleteVariableKey is used to delete a specific key within an object variable.",
+        "exampleDesc": "In this example icon1 will be deleted and icons will be set to only return icon2",
+        "usage": {
+            "type": "container",
+            "prps": {
+                "icons": {
+                    "icon1": "face",
+                    "icon2": "flare"
+                },
+                "scps": [
+                    {
+                        "id": "script",
+                        "triggers": [
+                            {
+                                "event": "onMount"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "setVariable",
+                                "value": "{{state.self.icons}}",
+                                "name": "icons"
+                            },
+                            {
+                                "type": "deleteVariableKey",
+                                "scope": "script",
+                                "name": "icons",
+                                "key": "icon1"
+                            },
+                            {
+                                "type": "setState",
+                                "key": "icons",
+                                "value": "{{script.variable.icons}}"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "propSpec": [
+            {
+                "key": "scope",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": "This is used to define the accessor that the action will be checking for the variable in"
+            },
+            {
+                "key": "name",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The name of the variable that will have a key deleted"
+            },
+            {
+                "key": "key",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The name of the key that will be deleted from the variable."
+            }
+        ]
+    }
+]

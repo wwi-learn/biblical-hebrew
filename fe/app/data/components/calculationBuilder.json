@@ -1,0 +1,49 @@
+[
+    {
+        "name": "calculationBuilder",
+        "description": "Not provided",
+        "usage": {
+            "type": "calculationBuilder",
+            "prps": {}
+        },
+        "propSpec": [
+            {
+                "name": "calculation",
+                "type": "string",
+                "desc": "The generated calculation string",
+                "dft": ""
+            },
+            {
+                "name": "calculationEntries",
+                "type": "array",
+                "desc": "A list containing each entry inside the calculation string and it's associated data",
+                "spec": "[{id, label, !selected, !index}]",
+                "dft": "() => []",
+                "setAction": "TODO(FUNCTION)",
+                "deleteAction:": "TODO(FUNCTION)"
+            },
+            {
+                "name": "selectedCalculationEntries",
+                "type": "array",
+                "desc": "A list of selected calculationEntries",
+                "dft": "() => []"
+            },
+            {
+                "name": "selectEntryIndex",
+                "type": "number",
+                "desc": "A number which sets any given entry by its index. This happens by default when selecting an entry but can be set programmatically to select an entry"
+            },
+            {
+                "name": "splitCalculationStringBy",
+                "type": "string",
+                "desc": "The characters by which are used to split the calculation string when it has been modified",
+                "dft": " "
+            },
+            {
+                "name": "ignoreWordsList",
+                "type": "array",
+                "desc": "A list of words which should cannot be split by the splitCalculationStringBy flag"
+            }
+        ]
+    }
+]

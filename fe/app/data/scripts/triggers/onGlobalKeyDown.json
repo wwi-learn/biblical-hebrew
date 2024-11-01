@@ -1,0 +1,42 @@
+[
+    {
+        "name": "onGlobalKeyDown",
+        "desc": "Fires when the user presses a key while no other component (like an input) has focus. When this trigger fires, the following variables will be set: triggeredKey and triggeredKeyCode",
+        "exampleDesc": "This example will fire when the x key is pressed.",
+        "usage": [
+            {
+                "event": "onGlobalKeyDown",
+                "match": [
+                    {
+                        "comparison": "isEqual",
+                        "value": "((event.key))",
+                        "compareValue": "x"
+                    }
+                ]
+            },
+            {
+                "event": "onGlobalKeyDown",
+                "match": [
+                    {
+                        "comparison": "isEqual",
+                        "value": "((event.key))",
+                        "compareValue": "a"
+                    },
+                    {
+                        "comparison": "isNotFalsy",
+                        "value": "((event.shiftDown))"
+                    }
+                ]
+            }
+        ],
+        "propSpec": [
+            {
+                "key": "consumeEventOnUse",
+                "dataType": "boolean",
+                "mandatory": false,
+                "dft": "false",
+                "desc": "When set to true the event will be consumed and as such, not perform its original function. For example, consuming F5will cause the browser to not refresh."
+            }
+        ]
+    }
+]

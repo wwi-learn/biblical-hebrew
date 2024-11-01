@@ -1,0 +1,85 @@
+[
+    {
+        "name": "findInArray",
+        "desc": "This a convenience action that removes the need to use a combination of forLoop, applyComparison, and setVariable actions in order to obtain a desired record",
+        "exampleDesc": "In this example, the icons array is looped through in order to obtain the index of the first entry which has show set to true. After running, the variable foundEntry will be set to the third entry in the array which is the first occurrence that matches the requirement.",
+        "usage": {
+            "type": "container",
+            "prps": {
+                "icons": [
+                    {
+                        "icon": "face",
+                        "show": false
+                    },
+                    {
+                        "icon": "phone",
+                        "show": false
+                    },
+                    {
+                        "icon": "home",
+                        "show": true
+                    }
+                ],
+                "scps": [
+                    {
+                        "triggers": [
+                            {
+                                "event": "onMount"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "id": "sF",
+                                "type": "findInArray",
+                                "value": "{{state.self.icons}}",
+                                "comparison": {
+                                    "operator": "isEqual",
+                                    "value": "{{sF.variable.record.show}}",
+                                    "compareValue": true
+                                },
+                                "storeAsVariable": "foundEntry"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "propSpec": [
+            {
+                "key": "id",
+                "dataType": "string",
+                "mandatory": false,
+                "dft": "",
+                "desc": "Defines the id for the script that morphs the comparison object. While this key is not mandatory, it would be impossible to access each record variable without this accessor since the {{variable.record}} accessor would be replaced as soon as the action is run, instead of for each record in the array"
+            },
+            {
+                "key": "value",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The array that should be searched through"
+            },
+            {
+                "key": "comparison",
+                "dataType": "object",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The comparison that should be applied to each array entry to establish whether the entry is a match"
+            },
+            {
+                "key": "recordVarName",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "record",
+                "desc": "The name of the variable in which each record will be placed when performing the comparison"
+            },
+            {
+                "key": "rowNumVarName",
+                "dataType": "string",
+                "mandatory": false,
+                "dft": "rowNum",
+                "desc": "The name of the variable in which the row number for each record will be placed when performing the comparison"
+            }
+        ]
+    }
+]

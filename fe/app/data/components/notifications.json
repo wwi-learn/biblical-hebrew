@@ -1,0 +1,140 @@
+[
+    {
+        "name": "notifications",
+        "description": "Not provided",
+        "usage": {
+            "type": "containerSimple",
+            "prps": {
+                "singlePage": true,
+                "mainAxisAlign": "center",
+                "crossAxisAlign": "center",
+                "backgroundColor": "lightGrey"
+            },
+            "wgts": [
+                {
+                    "id": "ntfRoot",
+                    "type": "notifications",
+                    "container": "root",
+                    "prps": {
+                        "position": "absolute",
+                        "top": "padding",
+                        "right": "50%",
+                        "minWidth": "150px",
+                        "colorBackgroundInfo": "info",
+                        "duration": "1500",
+                        "prpsLabel": {
+                            "color": "white",
+                            "fontSize": "fontSizeMedium"
+                        }
+                    }
+                },
+                {
+                    "type": "button",
+                    "prps": {
+                        "cpt": "Click Me!",
+                        "padding": true,
+                        "paddingSize": "tinyPadding smallPadding",
+                        "marginTop": "30px",
+                        "color": "green",
+                        "prpsLabel": {
+                            "color": "white"
+                        },
+                        "fireScript": {
+                            "actions": [
+                                {
+                                    "type": "showNotification",
+                                    "target": "ntfRoot",
+                                    "msgType": "info",
+                                    "msg": "Notification Message"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "propSpec": [
+            {
+                "name": "newMsg",
+                "type": "object",
+                "desc": "The notification message object",
+                "spec": {
+                    "msg": "string",
+                    "autoClose": "boolean",
+                    "duration": "number",
+                    "isGlobal": "boolean"
+                }
+            },
+            {
+                "name": "duration",
+                "type": "number",
+                "desc": "The default duration that the message should be shown for",
+                "dft": 3000
+            },
+            {
+                "name": "colorBackgroundWarning",
+                "type": "string",
+                "desc": "A string that defines the background color of warning type notifications",
+                "cssVar": "color-background-warning",
+                "cssVarVal": "mapToColor"
+            },
+            {
+                "name": "colorBackgroundInfo",
+                "type": "string",
+                "desc": "A string that defines the background color of info type notifications",
+                "cssVar": "color-background-info",
+                "cssVarVal": "mapToColor"
+            },
+            {
+                "name": "colorBackgroundDanger",
+                "type": "string",
+                "desc": "A string that defines the background color of danger type notifications",
+                "cssVar": "color-background-danger",
+                "cssVarVal": "mapToColor"
+            },
+            {
+                "name": "colorBackgroundSuccess",
+                "type": "string",
+                "desc": "A string that defines the background color of success type notifications",
+                "cssVar": "color-background-success",
+                "cssVarVal": "mapToColor"
+            },
+            {
+                "name": "prpsLabel",
+                "type": "object",
+                "desc": "A object that defines additional config props for notification labels"
+            },
+            {
+                "name": "prpsIcon",
+                "type": "object",
+                "desc": "A object that defines additional config props for notification close icons"
+            },
+            {
+                "name": "msgTypeMda",
+                "type": "object",
+                "desc": "Defines custom metadata for custom message types. Said metadata will receive the following prps (and blueprintPrps where applicable): notificationsComponentId, notificationId and msg",
+                "spec": {
+                    "msgType1": {
+                        "type": "container",
+                        "wgts": [
+                            {
+                                "type": "label",
+                                "prps": {
+                                    "cpt": "I am a custom message"
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "removeMsg",
+                "type": "object",
+                "desc": "Informs the component that a message needs to be closed",
+                "spec": {
+                    "notificationId": "The id of the notification to be removed"
+                }
+            }
+        ]
+    }
+]

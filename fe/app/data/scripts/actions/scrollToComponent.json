@@ -1,0 +1,48 @@
+[
+    {
+        "name": "scrollToComponent",
+        "desc": "The scrollToComponent action programmatically scrolls to a target component within a scrollable containe",
+        "exampleDesc": "",
+        "usage": {
+            "type": "scrollToComponent",
+            "target": "targetElement",
+            "smooth": true,
+            "alignVertical": "center",
+            "alignHorizontal": "end"
+        },
+        "propSpec": [
+            {
+                "key": "target",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "options": "",
+                "desc": "The id of the component you wish to scroll into view"
+            },
+            {
+                "key": "smooth",
+                "dataType": "boolean",
+                "mandatory": false,
+                "dft": "false",
+                "options": "",
+                "desc": "When set to true, the container will have a smooth scroll animation. When set to false the scroll will be instant"
+            },
+            {
+                "key": "alignVertical",
+                "dataType": "string",
+                "mandatory": false,
+                "dft": "nearest",
+                "options": "start, center, end, nearest",
+                "desc": "Defines the vertical alignment of the target position"
+            },
+            {
+                "key": "alignHorizontal",
+                "dataType": "string",
+                "mandatory": false,
+                "dft": "nearest",
+                "options": "start, center, end, nearest",
+                "desc": "Defines the horizontal alignment of the target position"
+            }
+        ]
+    }
+]

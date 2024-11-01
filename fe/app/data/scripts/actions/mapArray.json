@@ -1,0 +1,86 @@
+[
+    {
+        "name": "mapArray",
+        "desc": "This a convenience action that removes the need to use a combination of forLoop and pushVariable actions in order to obtain a mapped version of an array.",
+        "exampleDesc": "In this example, the icons array is mapped to an array of icon widgets",
+        "usage": {
+            "type": "container",
+            "prps": {
+                "icons": [
+                    {
+                        "icon": "face",
+                        "show": false
+                    },
+                    {
+                        "icon": "phone",
+                        "show": true
+                    },
+                    {
+                        "icon": "home",
+                        "show": true
+                    }
+                ],
+                "scps": [
+                    {
+                        "triggers": [
+                            {
+                                "event": "onMount"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "id": "sM",
+                                "type": "mapArray",
+                                "value": "{{state.self.icons}}",
+                                "mapTo": {
+                                    "type": "icon",
+                                    "prps": {
+                                        "value": "{{sM.variable.record.icon}}"
+                                    }
+                                },
+                                "storeAsVariable": "iconWgts"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "propSpec": [
+            {
+                "key": "id",
+                "dataType": "string",
+                "mandatory": false,
+                "dft": "",
+                "desc": "Defines the id for the script that morphs the mapTo object. While this key is not mandatory, it would be impossible to access each record variable without this accessor since the {{variable.record}} accessor would be replaced as soon as the action is run, instead of for each record in the array."
+            },
+            {
+                "key": "value",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The array that should be mapped"
+            },
+            {
+                "key": "mapTo",
+                "dataType": "object",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The object to which the record should be mapped"
+            },
+            {
+                "key": "recordVarName",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "record",
+                "desc": "The name of the variable in which each record will be placed when performing the mapping"
+            },
+            {
+                "key": "rowNumVarName",
+                "dataType": "string",
+                "mandatory": false,
+                "dft": "rowNum",
+                "desc": "The name of the variable in which the row number for each record will be placed when performing the mapping"
+            }
+        ]
+    }
+]

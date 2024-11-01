@@ -1,0 +1,64 @@
+[
+    {
+        "name": "defineFunction",
+        "desc": "Functions are re-usable eval statements with cleaner markup. The defineFunction action defines a new function that can be used by any action once it has been defined. Note that in almost all cases, it is better to just define your functions in Function Themes but there are cases where dynamic functions may be needed where this action will prove useful",
+        "exampleDesc": "",
+        "usage": {
+            "type": "label",
+            "prps": {
+                "morphProps": [
+                    "cpt"
+                ],
+                "cpt": {
+                    "morphId": "s1",
+                    "morphVariable": "cpt",
+                    "morphActions": [
+                        {
+                            "type": "defineFunction",
+                            "name": "foo",
+                            "acceptArgs": {
+                                "a": "integer",
+                                "b": "string"
+                            },
+                            "fn": "($a$ * 2) + '%b%'"
+                        },
+                        {
+                            "type": "setVariable",
+                            "name": "cpt",
+                            "value": "{{fn.foo}}",
+                            "fnArgs": {
+                                "value": {
+                                    "a": 10,
+                                    "b": "x"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "propSpec": [
+            {
+                "key": "name",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The name of the function"
+            },
+            {
+                "key": "acceptArgs",
+                "dataType": "object",
+                "mandatory": true,
+                "dft": "",
+                "desc": "Defines which arguments the function accepts. This does not support defaults yet"
+            },
+            {
+                "key": "fn",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": "The function to be executed"
+            }
+        ]
+    }
+]

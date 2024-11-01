@@ -1,0 +1,52 @@
+[
+    {
+        "name": "image",
+        "description": "component used for onClick functionality",
+        "usage": {
+            "type": "image",
+            "prps": {
+                "value": "/images/logo.svg",
+                "imageWidth": "auto",
+                "imageHeight": "42px"
+            }
+        },
+        "propSpec": [
+            {
+                "name": "imageHeight",
+                "type": "string",
+                "desc": "A percentage string that defines the image's height",
+                "dft": "100%"
+            },
+            {
+                "name": "imageWidth",
+                "type": "string",
+                "desc": "A percentage string that defines the image's width",
+                "dft": "100%"
+            },
+            {
+                "name": "value",
+                "type": "string",
+                "desc": "A string path defining the location of the image",
+                "dft": "process.env.PUBLIC_URL + '/noImage.png'"
+            },
+            {
+                "name": "alt",
+                "type": "string",
+                "desc": "A text entry that is shown when the image cannot be displayed",
+                "dft": ""
+            },
+            {
+                "type": "tooltip",
+                "desc": "A string that defines the images's tooltip text",
+                "dft": ""
+            },
+            {
+                "name": "colorAltText",
+                "type": "string",
+                "desc": "The color to display the alt text in",
+                "cssVar": "color-alt-text",
+                "cssVarVal": true
+            }
+        ]
+    }
+]

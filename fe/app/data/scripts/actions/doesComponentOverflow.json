@@ -1,0 +1,93 @@
+[
+    {
+        "name": "doesComponentOverflow",
+        "desc": "When it is necessary to determine whether a component overflows or not (i.e. whether it has a scrollbar or not) the doesComponentOverflow action can be used. This action will often be used in conjunction with one of the following triggers: onWindowResized, onComponentResized,  onComponentChildrenChanged",
+        "exampleDesc": "In this example, the label will change to reflect whether the dashboard overflows or not.",
+        "usage": {
+            "id": "dashboard",
+            "type": "containerSimple",
+            "prps": {
+                "singlePage": true
+            },
+            "wgts": [
+                {
+                    "type": "containerSimple",
+                    "prps": {
+                        "backgroundColor": "lightGrey",
+                        "height": "500px"
+                    },
+                    "wgts": [
+                        {
+                            "type": "label",
+                            "prps": {
+                                "cpt": "sdfdsfffsfsdf",
+                                "height": "1000px",
+                                "scps": [
+                                    {
+                                        "triggers": [
+                                            {
+                                                "event": "onWindowResized"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "type": "doesComponentOverflow",
+                                                "target": "dashboard",
+                                                "axisY": true,
+                                                "storeAsVariable": "doesOverflow"
+                                            },
+                                            {
+                                                "type": "applyComparison",
+                                                "operator": "isTruthy",
+                                                "value": "{{variable.doesOverflow}}",
+                                                "branch": {
+                                                    "true": [
+                                                        {
+                                                            "type": "setState",
+                                                            "key": "cpt",
+                                                            "value": "Dashboard overflows"
+                                                        }
+                                                    ],
+                                                    "false": [
+                                                        {
+                                                            "type": "setState",
+                                                            "key": "cpt",
+                                                            "value": "Dashboard does not overflow"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "propSpec": [
+            {
+                "key": "target",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "script owner id",
+                "desc": "The id of the component which should be checked"
+            },
+            {
+                "key": "axisX",
+                "dataType": "boolean",
+                "mandatory": true,
+                "dft": "script owner id",
+                "desc": "When true the action will return true if the target component overflows/scrolls horizontally"
+            },
+            {
+                "key": "target",
+                "dataType": "boolean",
+                "mandatory": true,
+                "dft": "script owner id",
+                "desc": "When true the action will return true if the target component overflows/scrolls vertically"
+            }
+        ]
+    }
+]

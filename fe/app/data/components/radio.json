@@ -1,0 +1,60 @@
+[
+    {
+        "name": "radio",
+        "description": "Not provided",
+        "usage": {
+            "type": "radio",
+            "prps": {
+                "value": "option",
+                "options": [
+                    "option 1",
+                    "option 2",
+                    "option 3"
+                ],
+                "prpsIcon": {
+                    "color": "#660000"
+                }
+            }
+        },
+        "propSpec": [
+            {
+                "name": "options",
+                "type": "array",
+                "desc": "The list of values from which can be chosen"
+            },
+            {
+                "name": "value",
+                "type": "string",
+                "desc": "The value of the checkbox",
+                "dft": 0
+            },
+            {
+                "name": "inline",
+                "type": "boolean",
+                "desc": "When true, the options will render inline",
+                "dft": false,
+                "classMap": "inline"
+            },
+            {
+                "name": "hasLabel",
+                "type": "boolean",
+                "desc": "When true, the radio will have a label"
+            },
+            {
+                "name": "prpsIcon",
+                "type": "object",
+                "desc": "Properties which are passed to the radio's icon"
+            },
+            {
+                "name": "prpsLabel",
+                "type": "object",
+                "desc": "Properties which are passed to the radio's label"
+            },
+            {
+                "name": "prpsOptionLabel",
+                "type": "object",
+                "desc": "Properties which are passed to each radio label"
+            }
+        ]
+    }
+]

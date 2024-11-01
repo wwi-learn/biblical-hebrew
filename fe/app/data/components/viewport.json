@@ -1,0 +1,73 @@
+[
+    {
+        "name": "viewport",
+        "description": "Viewport to be used to disolay dashboard or screen",
+        "usage": {
+            "type": "containerSimple",
+            "prps": {
+                "flex": true
+            },
+            "wgts": [
+                {
+                    "id": "appMain",
+                    "type": "viewport",
+                    "prps": {
+                        "value": "pages/home/index"
+                    }
+                }
+            ]
+        },
+        "propSpec": [
+            {
+                "name": "autoTab",
+                "type": "boolean",
+                "desc": "When true, all items opened in the viewport should be opened as a tab"
+            },
+            {
+                "name": "ctrlTab",
+                "type": "boolean",
+                "desc": "When true, holding control while clicking on a menu item will cause the dashboard to open as a tab",
+                "dft": false
+            },
+            {
+                "name": "ctrlDown",
+                "type": "boolean",
+                "desc": "An internal prop which becomes registered when the user is pressing the ctrl key",
+                "internal": true
+            },
+            {
+                "name": "value",
+                "type": "string",
+                "desc": "The name of the dashboard to be opened",
+                "rememberLast": true
+            },
+            {
+                "name": "mda",
+                "type": "mixed",
+                "desc": "The metadata of all dashboards that are being rendered"
+            },
+            {
+                "name": "inputMda",
+                "type": "object",
+                "desc": "Contains the metadata that should be rendered in the viewport. Should not be used in conjunction with value"
+            },
+            {
+                "name": "tabsMda",
+                "type": "array",
+                "desc": "The same as mda except for when there are multiple tabs being rendered",
+                "internal": true
+            },
+            {
+                "name": "oldValue",
+                "type": "mixed",
+                "desc": "The name of the last dashboard that was opened",
+                "internal": true
+            },
+            {
+                "name": "hasCloseOption",
+                "type": "boolean",
+                "desc": "When true, tabs can be closed from their context menus"
+            }
+        ]
+    }
+]

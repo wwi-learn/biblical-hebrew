@@ -1,0 +1,117 @@
+[
+    {
+        "name": "log",
+        "desc": " When you wish to perform an action when multiple components have states that adhere to a certain condition, the allCpnsHaveStates action can be used. This is often used in conjunction with tags to set the enabled state of various components (like buttons). E.g. disable a button when all fields on a form have not been completed yet.",
+        "exampleDesc": "",
+        "usage": {
+            "type": "containerSimple",
+            "wgts": [
+                {
+                    "type": "input",
+                    "prps": {
+                        "tags": [
+                            "formField"
+                        ],
+                        "placeholder": "please enter a value..."
+                    }
+                },
+                {
+                    "type": "input",
+                    "prps": {
+                        "tags": [
+                            "formField"
+                        ],
+                        "placeholder": "please enter a value..."
+                    }
+                },
+                {
+                    "type": "input",
+                    "prps": {
+                        "tags": [
+                            "formField"
+                        ],
+                        "placeholder": "please enter a value..."
+                    }
+                },
+                {
+                    "type": "button",
+                    "prps": {
+                        "color": "primary",
+                        "cpt": "Action",
+                        "enabled": false,
+                        "scps": [
+                            {
+                                "triggers": [
+                                    {
+                                        "event": "onStateChange",
+                                        "sourceTag": "formField",
+                                        "ignoreEmpty": false
+                                    }
+                                ],
+                                "actions": [
+                                    {
+                                        "type": "allCpnsHaveStates",
+                                        "sourceTag": "formField",
+                                        "operator": "all",
+                                        "comparisons": [
+                                            {
+                                                "operator": "isTruthy",
+                                                "key": "value"
+                                            }
+                                        ],
+                                        "branch": {
+                                            "true": [
+                                                {
+                                                    "type": "setState",
+                                                    "key": "enabled",
+                                                    "value": true
+                                                }
+                                            ],
+                                            "false": [
+                                                {
+                                                    "type": "setState",
+                                                    "key": "enabled",
+                                                    "value": false
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "propSpec": [
+            {
+                "key": "sourceList",
+                "dataType": "array of strings",
+                "mandatory": false,
+                "dft": "",
+                "desc": "A list of id's to check"
+            },
+            {
+                "key": "sourceTag",
+                "dataType": "string",
+                "mandatory": false,
+                "dft": "",
+                "desc": "A single tag to check"
+            },
+            {
+                "key": "operator",
+                "dataType": "string",
+                "mandatory": true,
+                "dft": "",
+                "desc": "Should be all, some or none"
+            },
+            {
+                "key": "comparisons",
+                "dataType": "array of objects",
+                "mandatory": true,
+                "dft": "",
+                "desc": "An array of comparisons to apply. These should be built in the same way that comparisons are built for for the applyComparison action. Note that this action does not support nested comparisons"
+            }
+        ]
+    }
+]

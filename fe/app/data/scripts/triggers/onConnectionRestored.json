@@ -1,0 +1,30 @@
+[
+    {
+        "name": "onConnectionRestored",
+        "desc": "Fires when: The browser is set to online mode after it was in offline mode. Wi-Fi / Mobile data is activated on a mobile device after the device did not have connectivity. A mobile device moves in range of a Wi-Fi network. Does not fire when: An ethernet adapter is enabled on a desktop device after it was disabled",
+        "exampleDesc": "",
+        "usage": {
+            "type": "label",
+            "prps": {
+                "cpt": "No event fired yet",
+                "scps": [
+                    {
+                        "triggers": [
+                            {
+                                "event": "onConnectionRestored"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "setState",
+                                "key": "cpt",
+                                "value": "Connection restored"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "propSpec": []
+    }
+]
