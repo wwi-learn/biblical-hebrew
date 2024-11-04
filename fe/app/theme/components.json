@@ -27,38 +27,26 @@
 			}
 		}
 	},
-	"buttonPattern": {
-		"path": "button",
-		"propSpec": {
-			"color": {
-				"dft": "themeTeal"
-			},
-			"height": {
-				"dft": "30px"
-			},
-			"width": {
-				"dft": "100px"
-			},
-			"marginTop": {
-				"dft": "mediumPadding"
-			},
-			"roundedBorders": {
-				"dft": true
-			},
-			"borderRadius": {
-				"dft": "3px"
-			},
-			"prpsLabel": {
-				"dft": {
-					"color": "themeWhite"
-				}
-			}
-		}
-	},
 	"container": {
 		"path": "container"
 	},
 	"containerSimple": {
 		"path": "containerSimple"
+	},
+	"notifications": {
+		"path": "notifications",
+		"propSpec": {
+			"colorBackgroundDanger": {
+				"dft": "error"
+			},
+			"colorBackgroundSuccess": {
+				"dft": "success"
+			},
+			"prpsLabel": {
+				"dft": {
+					"color": "errorText"
+				}
+			}
+		}
 	}
 }

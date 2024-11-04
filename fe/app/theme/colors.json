@@ -4,5 +4,7 @@
 	"themeBackground": "#222628",
 	"themeWhite": "#fafafa",
 	"error": "#d9534f",
-	"errorText": "#fafafa"
+	"errorText": "#fafafa",
+	"success": "#00A77D",
+	"success2": "#4CAF50"
 }

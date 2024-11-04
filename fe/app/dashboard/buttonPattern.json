@@ -8,13 +8,36 @@
 	"type": "button",
 	"prps": {
 		"cpt": "%pattern%",
+		"value": "%pattern%",
 		"fireScript": {
 			"actions": [
 				{
-					"type": "showNotification",
-					"msgType": "danger",
-					"msg": "X - %pattern%",
-					"duration": 5000
+					"type": "applyComparison",
+					"operator": "isEqual",
+					"value": "{{state.||idPattern||.wordPattern}}",
+					"compareValue": "{{state.self.value}}",
+					"branch": {
+						"true": [
+							{
+								"type": "log",
+								"msg": "V - ((state.self.value)) ((state.||idPattern||.wordPattern))"
+							},
+							{
+								"type": "showNotification",
+								"msgType": "success",
+								"msg": "((state.||idPattern||.word)) - %pattern%",
+								"duration": 5000
+							}
+						],
+						"false": [
+							{
+								"type": "showNotification",
+								"msgType": "danger",
+								"msg": "((state.||idPattern||.word)) לא %pattern%",
+								"duration": 5000
+							}
+						]
+					}
 				}
 			]
 		}
