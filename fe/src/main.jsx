@@ -10,6 +10,7 @@ import convertMarkdownToComponents from './scriptActions/convertMarkdownToCompon
 import getDocSectionInView from './scriptActions/getDocSectionInView';
 import depthFirstSearch from './scriptActions/depthFirstSearch';
 import queryUrl2 from './scriptActions/queryUrl2';
+import getPealimData from './scriptActions/paelimData';
 import routeFromUrl from './scriptActions/routeFromUrl';
 import route from './scriptActions/route';
 
@@ -38,6 +39,7 @@ const externalActions = {
 	getDocSectionInView,
 	depthFirstSearch,
 	queryUrl2,
+	getPealimData,
 	routeFromUrl,
 	route
 };

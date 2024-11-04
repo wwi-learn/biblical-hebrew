@@ -27,7 +27,13 @@
 								"msgType": "success",
 								"msg": "((state.||idPattern||.word)) - %pattern%",
 								"duration": 5000
-							}
+							},
+							{
+                                "type": "getPealimData",
+                                "extractRandomWord": true,
+                                "target": "||idPattern||",
+                                "verbs": "{{state.||idPattern||.verbs}}"
+                            }
 						],
 						"false": [
 							{

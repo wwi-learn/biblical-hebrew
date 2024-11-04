@@ -1,0 +1,7 @@
+{
+	"themeConfig": {
+		"isStyleTheme": false,
+		"isFreeTextTheme": true
+	},
+	"words": ">>data/words"
+}

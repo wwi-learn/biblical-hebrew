@@ -7,8 +7,54 @@
         "mainAxisAlign": "center",
         "crossAxisAlign": "center",
         "gap": "24px",
+        "verbs": {},
         "word": "Example",
-        "wordPattern": "PAAL"
+        "wordPattern": "PIEL",
+        "scps": [
+                    {
+                        "triggers": [
+                            {
+                                "event": "onMount"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "setVariable",
+                                "name": "verbsRaw",
+                                "value": "{theme.freeText.words.verbs2}"
+                            },
+                            {
+                                "type": "setVariable",
+                                "name": "staticData",
+                                "value": [
+                                    "{{eval.",
+                                    "    const res = JSON.parse({{variable.verbsRaw}});",
+                                    "    res;",
+                                    "}}"
+                                ],
+                                "inlineKeys": [
+                                    "value"
+                                ]
+                            },
+                            {
+                                "type": "setState",
+                                "target": "||idPattern||",
+                                "key": "verbs",
+                                "value": "{{variable.staticData}}"
+                            },
+                            {
+                                "type": "log",
+                                "msg": "verbs: {{state.||idPattern||.verbs}}"
+                            },
+                            {
+                                "type": "getPealimData",
+                                "extractRandomWord": true,
+                                "target": "||idPattern||",
+                                "verbs": "{{state.||idPattern||.verbs}}"
+                            }
+                        ]
+                    }
+                ]
     },
     "wgts": [
         {
@@ -73,7 +119,7 @@
                                 {
                                     "trait": "buttonPattern",
                                     "traitPrps": {
-                                        "pattern": "PAEL"
+                                        "pattern": "PIEL"
                                     }
                                 }
                             ]

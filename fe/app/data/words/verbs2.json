@@ -1,0 +1,7 @@
+[
+    {"word": "build", "wordPattern": "PAAL"},
+    {"word": "pray", "wordPattern": "PIEL"},
+    {"word": "run", "wordPattern": "NIFAL"},
+    {"word": "create", "wordPattern": "HIFIL"},
+    {"word": "write", "wordPattern": "HITPAEL"}
+]
