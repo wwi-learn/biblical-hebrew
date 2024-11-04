@@ -6,10 +6,38 @@
 		"path": "button",
 		"propSpec": {
 			"color": {
-				"dft": "info"
+				"dft": "themeTeal"
 			},
 			"height": {
 				"dft": "30px"
+			},
+			"width": {
+				"dft": "100px"
+			},
+			"roundedBorders": {
+				"dft": true
+			},
+			"borderRadius": {
+				"dft": "3px"
+			},
+			"prpsLabel": {
+				"dft": {
+					"color": "themeWhite"
+				}
+			}
+		}
+	},
+	"buttonPattern": {
+		"path": "button",
+		"propSpec": {
+			"color": {
+				"dft": "themeTeal"
+			},
+			"height": {
+				"dft": "30px"
+			},
+			"width": {
+				"dft": "100px"
 			},
 			"marginTop": {
 				"dft": "mediumPadding"
@@ -22,7 +50,7 @@
 			},
 			"prpsLabel": {
 				"dft": {
-					"color": "infoText"
+					"color": "themeWhite"
 				}
 			}
 		}

@@ -2,5 +2,7 @@
 	"themeRed": "#dd1122",
 	"themeTeal": "#11aabb",
 	"themeBackground": "#222628",
-	"themeWhite": "#fafafa"
+	"themeWhite": "#fafafa",
+	"error": "#d9534f",
+	"errorText": "#fafafa"
 }

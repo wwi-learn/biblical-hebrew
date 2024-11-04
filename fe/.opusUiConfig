@@ -5,6 +5,7 @@
 		"packagedFileName": "app"
 	},
 	"opusUiComponentLibraries": [
+		"components"
 
 	],
 	"opusUiEnsembles": [

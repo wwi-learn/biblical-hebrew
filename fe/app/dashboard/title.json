@@ -7,7 +7,7 @@
 	},
 	"type": "label",
 	"prps": {
-		"caption": "%title%",
+		"cpt": "%title%",
 		"fontSize": "32px",
 		"color": "themeRed"
 	}

@@ -19,60 +19,99 @@
             ]
         },
         {
-            "type": "clicker",
+            "id": "NOTIFICATIONS",
+            "type": "notifications",
             "prps": {
-                "topText": "Click me",
-                "bottomText": "You have clicked %1 time(s)",
+                "colorBackgroundDanger": "error"
+            }
+        },
+        {
+            "type": "label",
+            "prps": {
+                "cpt": "Example",
                 "color": "{theme.colors.themeWhite}"
             }
         },
         {
-            "type": "button",
+            "type": "containerSimple",
             "prps": {
-                "caption": "Change Theme",
-                "color": "themeTeal",
-                "height": "30px",
-                "marginTop": "mediumPadding",
-                "roundedBorders": true,
-                "borderRadius": "3px",
-                "onClick": {
-                    "action": "changeTheme"
+                "autoChildMargins": true,
+                "autoChildMarginsSize": "12px"
+            },
+            "wgts": [
+                {
+                    "type": "containerSimple",
+                    "prps": {
+                        "dir": "horizontal",
+                        "autoChildMargins": true,
+                        "autoChildMarginsSize": "12px"
+                    },
+                    "wgts": [
+                        
+                        {
+                            "traits": [
+                                {
+                                    "trait": "buttonPattern",
+                                    "traitPrps": {
+                                        "pattern": "PAAL"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "traits": [
+                                {
+                                    "trait": "buttonPattern",
+                                    "traitPrps": {
+                                        "pattern": "PAEL"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "containerSimple",
+                    "prps": {
+                        "dir": "horizontal",
+                        "autoChildMargins": true,
+                        "autoChildMarginsSize": "12px"
+                    },
+                    "wgts": [
+                        {
+                            "traits": [
+                                {
+                                    "trait": "buttonPattern",
+                                    "traitPrps": {
+                                        "pattern": "HIFIL"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "traits": [
+                                {
+                                    "trait": "buttonPattern",
+                                    "traitPrps": {
+                                        "pattern": "HITPAEL"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                
+                {
+                    "traits": [
+                        {
+                            "trait": "buttonPattern",
+                            "traitPrps": {
+                                "pattern": "NIFAL"
+                            }
+                        }
+                    ]
                 }
-            }
-        },
-        {
-            "type": "button",
-            "prps": {
-                "caption": "Change App Mode",
-                "color": "themeTeal",
-                "height": "30px",
-                "marginTop": "mediumPadding",
-                "roundedBorders": true,
-                "borderRadius": "3px",
-                "onClick": {
-                    "action": "changeAppMode"
-                }
-            }
-        },
-        {
-            "type": "label",
-            "prps": {
-                "caption": "Theme: {theme.system.theme}",
-                "position": "absolute",
-                "right": "mediumPadding",
-                "bottom": "mediumPadding",
-                "color": "themeTeal"
-            }
-        }
-        {
-            "type": "label",
-            "prps": {
-                "caption": "App Mode: {theme.system.appMode}",
-                "position": "absolute",
-                "right": "mediumPadding",
-                "bottom": "mediumPadding",
-                "color": "themeTeal"
-            }
+            ]
         }
     ]
 }

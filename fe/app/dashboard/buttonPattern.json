@@ -1,0 +1,22 @@
+{
+	"acceptPrps": {
+		"pattern": {
+			"type": "string",
+			"desc": "The pattern name"
+		}
+	},
+	"type": "button",
+	"prps": {
+		"cpt": "%pattern%",
+		"fireScript": {
+			"actions": [
+				{
+					"type": "showNotification",
+					"msgType": "danger",
+					"msg": "X - %pattern%",
+					"duration": 5000
+				}
+			]
+		}
+	}
+}

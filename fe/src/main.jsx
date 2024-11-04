@@ -1,6 +1,10 @@
 //Opus
 import { loadApp, registerComponentTypes, registerExternalAction  } from '@intenda/opus-ui';//Opus
 
+//Component Libraries
+import '@intenda/opus-ui-components';
+import '@intenda/opus-ui-grid';
+
 //Script Actions
 import convertMarkdownToComponents from './scriptActions/convertMarkdownToComponents';
 import getDocSectionInView from './scriptActions/getDocSectionInView';
@@ -13,8 +17,6 @@ import route from './scriptActions/route';
 import handleBrowserBackForward from './helpers/handleBrowserBackForward';
 
 //Custom Components
-import Label from './components/label';
-import propsLabel from './components/label/props';
 import Clicker from './components/clicker';
 import propsClicker from './components/clicker/props';
 
@@ -26,10 +28,6 @@ window.addEventListener('popstate', handleBrowserBackForward);
 
 //Custom Component Registration
 registerComponentTypes([{
-	type: 'label',
-	component: Label,
-	propSpec: propsLabel
-}, {
 	type: 'clicker',
 	component: Clicker,
 	propSpec: propsClicker
