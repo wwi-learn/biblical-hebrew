@@ -50,19 +50,23 @@ const saveResultInState = (action, script, scriptProps, data) => {
 };
 
 const getRandomWord = (verbs) => {
-	console.log('getRandomWord...');
-	console.log(verbs);
-	console.log('...');
-	const data = verbs;
-	// const data = [
-	// 	{'word': 'build', 'wordPattern': 'PAAL'},
-	// 	{'word': 'pray', 'wordPattern': 'PIEL'},
-	// 	{'word': 'run', 'wordPattern': 'NIFAL'},
-	// 	{'word': 'create', 'wordPattern': 'HIFIL'},
-	// 	{'word': 'write', 'wordPattern': 'HITPAEL'}
-	// ];
-	const randomIndex = Math.floor(Math.random() * data.length);
-	return data[randomIndex];
+	const patterns = ["pa'al", "pi'el", "nif'al", "hif'il", "hitpa'el"];
+	const pattern = patterns[Math.floor(Math.random() * patterns.length)];
+	const pattern_verbs = verbs['pattern_index_list'][pattern];
+	const ix = pattern_verbs[Math.floor(Math.random() * pattern_verbs.length)];
+	
+	console.log("IX: " + ix);
+	console.log("VERB: ");
+	console.log(verbs['verbs'][ix]);
+
+	const active_forms = verbs['verbs'][ix]['active_forms'];
+	console.log("ACTIVE FORM: ");
+	console.log(verbs['verbs'][ix]);
+	console.log("Past Tense: ");
+	console.log(active_forms['past_tense']);
+	const result = active_forms['past_tense']['singular_3rd_person_male']['menakud']
+	console.log(result);
+	return {'word': result, 'wordPattern': pattern};
 };
 
 /* eslint-disable-next-line max-lines-per-function */

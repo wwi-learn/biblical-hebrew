@@ -7,9 +7,8 @@
         "mainAxisAlign": "center",
         "crossAxisAlign": "center",
         "gap": "24px",
-        "verbs": {},
-        "word": "Example",
-        "wordPattern": "PIEL",
+        "word": "...",
+        "wordPattern": "...",
         "scps": [
                     {
                         "triggers": [
@@ -21,7 +20,7 @@
                             {
                                 "type": "setVariable",
                                 "name": "verbsRaw",
-                                "value": "{theme.freeText.words.verbs2}"
+                                "value": "{theme.freeText.words.verbs}"
                             },
                             {
                                 "type": "setVariable",
@@ -43,14 +42,10 @@
                                 "value": "{{variable.staticData}}"
                             },
                             {
-                                "type": "log",
-                                "msg": "verbs: {{state.||idPattern||.verbs}}"
-                            },
-                            {
                                 "type": "getPealimData",
                                 "extractRandomWord": true,
                                 "target": "||idPattern||",
-                                "verbs": "{{state.||idPattern||.verbs}}"
+                                "verbs": "{{variable.staticData}}"
                             }
                         ]
                     }
@@ -80,6 +75,7 @@
             "prps": {
                 "cpt": "",
                 "color": "{theme.colors.themeWhite}",
+                "fontSize": "24px",
                 "flows": [
                     {
                         "from": "||idPattern||",
@@ -109,7 +105,7 @@
                                 {
                                     "trait": "buttonPattern",
                                     "traitPrps": {
-                                        "pattern": "PAAL"
+                                        "pattern": "pa'al"
                                     }
                                 }
                             ]
@@ -119,7 +115,7 @@
                                 {
                                     "trait": "buttonPattern",
                                     "traitPrps": {
-                                        "pattern": "PIEL"
+                                        "pattern": "pi'el"
                                     }
                                 }
                             ]
@@ -139,7 +135,7 @@
                                 {
                                     "trait": "buttonPattern",
                                     "traitPrps": {
-                                        "pattern": "HIFIL"
+                                        "pattern": "hif'il"
                                     }
                                 }
                             ]
@@ -149,7 +145,7 @@
                                 {
                                     "trait": "buttonPattern",
                                     "traitPrps": {
-                                        "pattern": "HITPAEL"
+                                        "pattern": "hitpa'el"
                                     }
                                 }
                             ]
@@ -161,7 +157,7 @@
                         {
                             "trait": "buttonPattern",
                             "traitPrps": {
-                                "pattern": "NIFAL"
+                                "pattern": "nif'al"
                             }
                         }
                     ]
