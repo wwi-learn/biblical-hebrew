@@ -9,6 +9,7 @@
         "gap": "24px",
         "word": "...",
         "wordPattern": "...",
+        "filter3ms": true,
         "scps": [
                     {
                         "triggers": [
@@ -45,7 +46,8 @@
                                 "type": "getPealimData",
                                 "extractRandomWord": true,
                                 "target": "||idPattern||",
-                                "verbs": "{{variable.staticData}}"
+                                "verbs": "{{variable.staticData}}",
+                                "filter3ms": "{{state.||idPattern||.filter3ms}}"
                             }
                         ]
                     }
@@ -61,6 +63,55 @@
                     }
                 }
             ]
+        },
+        {
+            "type": "button",
+            "prps": {
+                "cpt": "רק עבר 3♂ז ",
+                "borderRadius": "20px",
+                "color": "labelActive",
+                "value": true,
+                "flows": [
+                    {
+                        "from": "||idPattern||",
+                        "fromKey": "filter3ms",
+                        "toKey": "color",
+                        "mapFunctionString": "v => v === true ? 'labelActive': 'labelInactive'"
+                    }
+                ],
+                "fireScript": {
+                    "actions": [
+                        {
+                            "type": "applyComparison",
+                            "operator": "isEqual",
+                            "value": "{{state.||idPattern||.filter3ms}}",
+                            "compareValue": true,
+                            "branch": {
+                                "true": [
+                                    {
+                                        "type": "setState",
+                                        "target": "||idPattern||",
+                                        "key": "filter3ms",
+                                        "value": false
+                                    }
+                                ],
+                                "false": [
+                                    {
+                                        "type": "setState",
+                                        "target": "||idPattern||",
+                                        "key": "filter3ms",
+                                        "value": true
+                                    }
+                                ]
+                            }   
+                        },
+                        {
+                            "type": "log",
+                            "msg": "TEST: ((state.||idPattern||.filter3ms))"
+                        }
+                    ]
+                }
+            }
         },
         {
             "id": "NOTIFICATIONS",

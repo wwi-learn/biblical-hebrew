@@ -6,5 +6,7 @@
 	"error": "#d9534f",
 	"errorText": "#fafafa",
 	"success": "#00A77D",
-	"success2": "#4CAF50"
+	"success2": "#4CAF50",
+	"labelActive": "#0e8a99",
+    "labelInactive": "rgba(17, 170, 187, 0.2)"
 }

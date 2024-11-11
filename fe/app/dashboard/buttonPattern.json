@@ -19,10 +19,6 @@
 					"branch": {
 						"true": [
 							{
-								"type": "log",
-								"msg": "V - ((state.self.value)) ((state.||idPattern||.wordPattern))"
-							},
-							{
 								"type": "showNotification",
 								"msgType": "success",
 								"msg": "((state.||idPattern||.word)) - %pattern%",
@@ -32,7 +28,8 @@
                                 "type": "getPealimData",
                                 "extractRandomWord": true,
                                 "target": "||idPattern||",
-                                "verbs": "{{state.||idPattern||.verbs}}"
+                                "verbs": "{{state.||idPattern||.verbs}}",
+                                "filter3ms": "{{state.||idPattern||.filter3ms}}"
                             }
 						],
 						"false": [
