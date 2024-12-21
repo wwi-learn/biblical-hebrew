@@ -7,6 +7,11 @@ import requests
 from bs4 import BeautifulSoup
 import pickle
 
+VERBS_FILE_PATH = '../fe/app/data/words/verbs.json'
+
+VERBS_RAW_FILE_PATH = 'verbs_raw.dat'
+
+
 class Label:
     FUTURE_TENSE: str = 'future_tense'
     PAST_TENSE: str = 'past_tense'
@@ -254,15 +259,40 @@ def fetch_conjugates(from_file_path):
                 result[k] = conjugate
                 result[k].update(v)
                 result[k]['word_type'] = 'verb'
-                result[k]['word_pattern'] = v['part_of_speech'].split(' – ')[1]
+                result[k]['word_pattern'] = v['part_of_speech'].split(' – ')[1].split(',')[0]
         except Exception as e:
             print(f'ERROR: {k}-{v['link']}: {e}')
-    with codecs.open('verbs.dat', 'wb', encoding='utf-8') as f:
+    with codecs.open(VERBS_RAW_FILE_PATH, 'wb', encoding='utf-8') as f:
         json.dump(result, f, ensure_ascii=False)
     print(result)
+
+
+def post_process_verbs():
+    with codecs.open(VERBS_RAW_FILE_PATH, 'rb') as f:
+        content = f.read()
+        verbs_raw = json.loads(content)
+    # Convert the verb dictionary to a list
+    verbs = []
+    pattern_index_list = {}
+    for k, v in verbs_raw.items():
+        v['word'] = k
+        verbs.append(v)
+        word_pattern = v['part_of_speech'].split(' – ')[1].split(',')[0]
+        pattern_index_list[word_pattern] = pattern_index_list.get(word_pattern, [])
+        pattern_index_list[word_pattern].append(len(verbs) - 1)
+    result = {
+        'verbs': verbs,
+        'pattern_index_list': pattern_index_list
+    }
+    with codecs.open(VERBS_FILE_PATH, 'wb', encoding='utf-8') as f:
+        json.dump(result, f, ensure_ascii=False)
+    for k, v in pattern_index_list.items():
+        print(f'{k}: {len(v)}')
+
 
 if __name__ == "__main__":
     file_path = 'word_links.dat'
     #fetch_words(file_path)
     #read_and_print_file(file_path)
-    fetch_conjugates(file_path)
+    #fetch_conjugates(file_path)
+    post_process_verbs()
