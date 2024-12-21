@@ -24,10 +24,8 @@ const saveResultInScriptVariables = (extractors, script, scriptProps, requestRes
 };
 
 const saveResultInState = (action, script, scriptProps, data) => {
-	console.log(data)
 	const { getWgtState, setWgtState } = scriptProps;
 	const { saveToStateKey, saveToStateSubKey, target } = action;
-	console.log(saveToStateKey, saveToStateSubKey, target)
 
 	if (data && data[0] && data[0].error)
 		return null;
@@ -49,32 +47,53 @@ const saveResultInState = (action, script, scriptProps, data) => {
 	}
 };
 
-const getRandomWord = (verbs) => {
-	console.log('getRandomWord...');
-	console.log(verbs);
-	console.log('...');
-	const data = verbs;
-	// const data = [
-	// 	{'word': 'build', 'wordPattern': 'PAAL'},
-	// 	{'word': 'pray', 'wordPattern': 'PIEL'},
-	// 	{'word': 'run', 'wordPattern': 'NIFAL'},
-	// 	{'word': 'create', 'wordPattern': 'HIFIL'},
-	// 	{'word': 'write', 'wordPattern': 'HITPAEL'}
-	// ];
-	const randomIndex = Math.floor(Math.random() * data.length);
-	return data[randomIndex];
+const getRandomWord = (verbs, filter3ms) => {
+	console.log("filter3ms: ", filter3ms);
+	const patterns = ["pa'al", "pi'el", "nif'al", "hif'il", "hitpa'el"];
+	const pattern = patterns[Math.floor(Math.random() * patterns.length)];
+	const pattern_verbs = verbs['pattern_index_list'][pattern];
+	const ix = pattern_verbs[Math.floor(Math.random() * pattern_verbs.length)];
+	const active_forms = verbs['verbs'][ix]['active_forms'];
+
+	const persons_list = [
+		'singular_1st_person',
+		'singular_2nd_person_male',
+		'singular_2nd_person_female',
+		'singular_3rd_person_male',
+		'singular_3rd_person_female',
+		'plural_1st_person',
+		'plural_2nd_person_male',
+		'plural_2nd_person_female',
+		'plural_3rd_person_male',
+		'plural_3rd_person_female'
+	];
+	const active_forms_list = [
+		'past_tense',
+		'future_tense'
+	]
+	const ix_person = persons_list[Math.floor(Math.random() * persons_list.length)];
+	const ix_active_form = active_forms_list[Math.floor(Math.random() * active_forms_list.length)];
+
+	if (filter3ms) return {
+		'word': active_forms['past_tense']['singular_3rd_person_male']['menakud'],
+		'wordPattern': pattern
+	};
+	return {
+		'word': active_forms[ix_active_form][ix_person]['menakud'],
+		'wordPattern': pattern
+	};
 };
 
 /* eslint-disable-next-line max-lines-per-function */
 const getPealimData = async (action, script, scriptProps) => {
 	try {
 		const { extractRandomWord } = action;
-		const { verbs } = action;
+		const { verbs, filter3ms } = action;
 		const { extractAny, extractResults } = action;
 
 		let response = null;
 		if (extractRandomWord)
-			response = getRandomWord(verbs);
+			response = getRandomWord(verbs, filter3ms);
 		if (extractAny)
 			saveResultInScriptVariables(extractAny, script, scriptProps, response);
 		if (extractResults)
