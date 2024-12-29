@@ -8,7 +8,7 @@ import re
 import requests
 from bs4 import BeautifulSoup
 
-from wwi.db import Word, VerseWord, get_session, WordMorphology
+from wwi.db import Word, VerseWord, get_session, WordMorphology, AddedVerse
 
 
 def extract_root(strongs_number: str):
@@ -54,7 +54,9 @@ def _process_morphology(morphology: str):
             morphology_part['part_of_speech'] = 'suffix'
             if len(p_parts) == 1:
                 morphology_part['word_type'] = 'p'
-                assert len(p_parts[0]) == 3
+                assert len(p_parts[0]) in (3,4)
+                if len(p_parts[0]) == 4:
+                    assert p_parts[0][3] in ('e', '2'), morphology
                 morphology_part['person'] = p_parts[0][0]
                 morphology_part['gender'] = p_parts[0][1]
                 morphology_part['number'] = p_parts[0][2]
@@ -71,7 +73,9 @@ def _process_morphology(morphology: str):
                 assert len(p_parts[0]) == 3
             else:
                 morphology_part['word_type'] = 'p'
-                assert len(p_parts[0]) == 3
+                assert len(p_parts[0]) in (3,4), morphology
+                if len(p_parts[0]) == 4:
+                    assert p_parts[0][3] in ('e', '2'), morphology
                 morphology_part['person'] = p_parts[0][0]
                 morphology_part['gender'] = p_parts[0][1]
                 morphology_part['number'] = p_parts[0][2]
@@ -116,6 +120,8 @@ def _process_morphology(morphology: str):
             pass
         elif part_of_speech == 'Number':
             pass
+        elif part_of_speech == 'Punc':
+            morphology_part['type'] = part_of_speech
         else:
             print(morphology)
             raise NotImplementedError(f'Unknown morphology part of speech: {part_of_speech}')
@@ -130,6 +136,8 @@ def _process_morphology(morphology: str):
 def extract_verse_data(book: str, chapter: int, verse: int):
     url = f'https://openbible.com/text/{book}/{chapter}-{verse}.htm'
     response = requests.get(url)
+    if response.status_code == 404:
+        return
     soup = BeautifulSoup(response.content, 'html.parser')
 
     tbl_heading_div = soup.find('div', string='Text Analysis')
@@ -140,9 +148,12 @@ def extract_verse_data(book: str, chapter: int, verse: int):
     for ix, row in enumerate(rows[2:]):  # Skip the header row
         cells = row.find_all('td')
         if len(cells) == 4:
+            try:
+                hebrew_text = cells[1].contents[0].strip()
+            except TypeError:
+                continue
             strongs = cells[0].text.strip()
             root = extract_root(strongs) if strongs else None
-            hebrew_text = cells[1].contents[0].strip()
             translit_text = cells[1].find('span', class_='translit').find('a').text
             english = cells[2].text.strip()
             morphology = _process_morphology(cells[3].text.strip())
@@ -172,7 +183,7 @@ def insert_verse_data(session, data):
         if verse_word_data:
             continue
 
-        word_data = session.query(Word).filter_by(root=d['root']).first()
+        word_data = session.query(Word).filter_by(root=d['root'], hebrew=d['hebrew']).first()
         if not word_data:
             word_data = Word(
                 hebrew=d['hebrew'],
@@ -202,15 +213,15 @@ def insert_verse_data(session, data):
             )
             session.add(morphology_data)
 
-            verse_word_data = VerseWord(
-                book=d['book'],
-                chapter=d['chapter'],
-                verse=d['verse'],
-                verse_position=d['verse_position'],
-                word_id=word_data.id,
-                english=d['english']
-            )
-            session.add(verse_word_data)
+        verse_word_data = VerseWord(
+            book=d['book'],
+            chapter=d['chapter'],
+            verse=d['verse'],
+            verse_position=d['verse_position'],
+            word_id=word_data.id,
+            english=d['english']
+        )
+        session.add(verse_word_data)
         session.commit()
 
 def extract_book_data(book: str):
@@ -220,14 +231,22 @@ def extract_book_data(book: str):
 
     for chapter in range(1, 155):
         for verse in range(1, 200):
+            if session.query(AddedVerse).filter_by(book=book, chapter=chapter, verse=verse).first():
+                continue
             chapter_data = extract_verse_data(book, chapter, verse)
             if not chapter_data:
-                return book_data
+                break
             insert_verse_data(session, chapter_data)
+            added_verse = AddedVerse(
+                book=book,
+                chapter=chapter,
+                verse=verse
+            )
+            session.add(added_verse)
+            session.commit()
             book_data.extend(chapter_data)
             print(f'Finished {book}-{chapter}:{verse}')
         session.commit()
-        return book_data
 
     return book_data
 

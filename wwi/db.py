@@ -47,6 +47,14 @@ class VerseWord(Base):
 
     word = relationship('Word', back_populates='verse_words')
 
+# Table to store verses already added
+class AddedVerse(Base):
+    __tablename__ = 'added_verse'
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    book = Column(String, nullable=False)
+    chapter = Column(Integer, nullable=False)
+    verse = Column(Integer, nullable=False)
+
 
 DATABASE_URL = 'sqlite:///words.db'
 engine = create_engine(DATABASE_URL)
