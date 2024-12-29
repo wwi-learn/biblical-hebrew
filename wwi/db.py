@@ -1,14 +1,14 @@
 from sqlalchemy import Column, Integer, String, create_engine, ForeignKey, UniqueConstraint
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker, relationship
+from sqlalchemy.orm import sessionmaker, relationship, declarative_base
 
 Base = declarative_base()
 
 
 class Word(Base):
     __tablename__ = 'word'
+    __table_args__ = (UniqueConstraint('root', 'hebrew', 'strongs', name='_root_hebrew_strongs'),)
     id = Column(Integer, primary_key=True, autoincrement=True)
-    hebrew = Column(String, nullable=False, unique=True)
+    hebrew = Column(String, nullable=False)
     root = Column(String)
     language = Column(String, nullable=False)
     strongs = Column(String)

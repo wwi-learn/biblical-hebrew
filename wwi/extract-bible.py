@@ -116,7 +116,7 @@ def _process_morphology(morphology: str):
                 morphology_part['number'] = p_parts[1][1]
                 if len(p_parts[1]) == 3:
                     morphology_part['state'] = p_parts[1][2]
-        elif part_of_speech in ('I', 'Interrog'):
+        elif part_of_speech in ('I', 'Interrog', 'Interjection'):
             pass
         elif part_of_speech == 'Number':
             pass
@@ -183,7 +183,11 @@ def insert_verse_data(session, data):
         if verse_word_data:
             continue
 
-        word_data = session.query(Word).filter_by(root=d['root'], hebrew=d['hebrew']).first()
+        word_data = session.query(Word).filter_by(
+            root=d['root'],
+            hebrew=d['hebrew'],
+            strongs=d['strongs']
+        ).first()
         if not word_data:
             word_data = Word(
                 hebrew=d['hebrew'],
@@ -195,8 +199,8 @@ def insert_verse_data(session, data):
             session.add(word_data)
             session.commit()
         else:
-            print(f'Word already exists: {d["hebrew"]} - {d["root"]} - {d["strongs"]}')
-            print(f'In DB: {word_data.hebrew} - {word_data.root} - {word_data.strongs}')
+            # print(f'Word already exists: {d["hebrew"]} - {d["root"]} - {d["strongs"]}')
+            # print(f'In DB: {word_data.hebrew} - {word_data.root} - {word_data.strongs}')
             assert word_data.hebrew == d['hebrew'] and word_data.root == d['root'] and word_data.strongs == d['strongs']
 
         for m in d['morphology']:
